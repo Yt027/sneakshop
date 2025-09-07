@@ -154,13 +154,20 @@ define("TITLE", "SneakShop | Leader malien du Ecommerce");
         <h2 class="sitename"><?=APP_NAME?></h2>
 
         <div class="left">
-            <nav class="links">
+            <nav class="wrapper links">
+                <a href="<?=APP_URL?>/shop/" class="link">Chaussures Homme</a>
+                <a href="<?=APP_URL?>/shop/" class="link">Chaussures Femme</a>
+                <a href="<?=APP_URL?>/shop/" class="link">Tendances</a>
+                <a href="<?=APP_URL?>/shop/" class="link">Nouveautés</a>
+            </nav>
+
+            <nav class="wrapper links">
                 <a href="<?=APP_URL?>/shop/" class="link">Boutique</a>
                 <a href="<?=APP_URL?>/shop/" class="link">A propos</a>
                 <a href="<?=APP_URL?>/shop/" class="link">Contact</a>
             </nav>
 
-            <address class="address">
+            <address class="wrapper address">
                 <a href="" class="link">
                     <i class="bx bxl-facebook-circle icon"></i>
                     <span class="text">Facebook</span>
@@ -184,8 +191,15 @@ define("TITLE", "SneakShop | Leader malien du Ecommerce");
                     <span class="text">Contactez Nous</span>
                     <i class="bx bxl-whatsapp icon"></i>
                 </div>
+                
+                <div class="cta-btn rail">
+                    <span class="text">Rejoindre l'aventure</span>
+                    <i class="bx bxs-group icon"></i>
+                </div>
             </div>
         </div>
+
+        <p class="copyright"><?=APP_NAME?> &copy; 2024 <a target="_blank" href="https://yayadev.net">YayaDev</a>. Tous droits réservés.</p>
     </footer>
     <!-- Footer End -->
 
