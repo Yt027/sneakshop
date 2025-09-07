@@ -27,9 +27,9 @@ define("TITLE", "SneakShop | Leader malien du Ecommerce");
         <a href="<?=APP_URL?>" class="logo"><?=APP_NAME?></a>
 
         <nav class="navbar">
-            <a href="" class="link">Boutique</a>
-            <a href="" class="link">A propos</a>
-            <a href="" class="link">Contact</a>
+            <a href="<?=APP_URL?>/shop" class="link">Boutique</a>
+            <a href="<?=APP_URL?>/about" class="link">A propos</a>
+            <a href="<?=APP_URL?>/contact" class="link">Contact</a>
         </nav>
 
         <div class="cta">
@@ -163,8 +163,8 @@ define("TITLE", "SneakShop | Leader malien du Ecommerce");
 
             <nav class="wrapper links">
                 <a href="<?=APP_URL?>/shop/" class="link">Boutique</a>
-                <a href="<?=APP_URL?>/shop/" class="link">A propos</a>
-                <a href="<?=APP_URL?>/shop/" class="link">Contact</a>
+                <a href="<?=APP_URL?>/about/" class="link">A propos</a>
+                <a href="<?=APP_URL?>/contact/" class="link">Contact</a>
             </nav>
 
             <address class="wrapper address">
@@ -191,7 +191,7 @@ define("TITLE", "SneakShop | Leader malien du Ecommerce");
                     <span class="text">Contactez Nous</span>
                     <i class="bx bxl-whatsapp icon"></i>
                 </div>
-                
+
                 <div class="cta-btn rail">
                     <span class="text">Rejoindre l'aventure</span>
                     <i class="bx bxs-group icon"></i>

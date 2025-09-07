@@ -241,7 +241,7 @@ a {
     display: flex;
     /* align-items: end; */
     flex-wrap: wrap;
-    padding: 40px;
+    padding: 40px 40px 0;
     justify-content: space-between;
 
     margin-top: 70px;
