@@ -1,0 +1,132 @@
+section {
+    padding: 40px;
+    height: calc(100vh - 85px);
+}
+
+/* Hero Section Start */
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 2rem 8rem;
+}
+
+.hero .content {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.hero .content h1 {
+    font-size: 3rem;
+    font-style: italic;
+    color: var(--color);
+    font-weight: 900;
+}
+
+.hero .content h2 {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.hero .content p {
+    margin-top: 10px;
+    max-width: 560px;
+}
+
+.hero .content .cta {
+    margin-top: 14px;
+    display: flex;
+    gap: 20px;
+}
+
+.hero .hero-img {
+    flex: 0 0 50%;
+    object-fit: contain;
+    width: 50%;
+}
+
+/* Hero Section End */
+
+/* Value Sction Start */
+.value {
+    margin-top: -40px;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.value .item {
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+    padding: 1.5rem;
+    border-radius: 16px;
+}
+
+.value .item .icon {
+    font-size: 2.5rem;
+    line-height: 2;
+}
+
+.value .item .title {
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--primary-color);
+}
+
+/* Value Sction End */
+
+/* Partner Section Start */
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    filter: opacity(.8);
+    letter-spacing: -1px;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.partner {
+    margin: 100px 0px 0px;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.partner .splide__track {
+    overflow: hidden;
+    /* masque l'extérieur */
+}
+
+.partner .splide__list {
+    /* pas de display:flex ni de gap ici, Splide le gère */
+}
+
+.partner .splide__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3rem;
+    /* espace entre les logos */
+}
+
+.partner .item img {
+    height: 30px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* .partner .item img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+} */
+/* Partner Section End */

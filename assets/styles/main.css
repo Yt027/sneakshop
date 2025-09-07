@@ -1,0 +1,152 @@
+/* General Stuff */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    /* text-decoration: none; */
+}
+
+:root {
+    font-size: 12.6px;
+
+    /* Variables */
+    --bg-color: #FDFDFD;
+    --sd-bg-color: #FAFAFA;
+    --color: #343434;
+    --main-color: #010101;
+    --primary-color: #121212;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+
+    overflow-x: hidden;
+    width: 100vw;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+p {
+    color: var(--color);
+    font-size: 1.025rem;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header Start */
+.header {
+    padding: 20px 40px;
+    background-color: white;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo {
+    font-size: 2rem;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color);
+    width: 290px;
+}
+
+.header .navbar {
+    margin: auto;
+    display: flex;
+    gap: 24px;
+}
+
+.header .navbar .link {
+    font-size: 1.3rem;
+    color: var(--color);
+    font-weight: 600;
+    text-transform: capitalize;
+    position: relative;
+    transition: .3s;
+}
+.header .navbar .link:hover {
+    color: var(--primary-color);
+}
+
+.header .navbar .link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--primary-color);
+    transition: .3s;
+}
+.header .navbar .link:hover::before {
+    width: 100%;
+}
+
+.header .cta {
+    display: flex;
+    gap: 20px;
+}
+
+.cta-btn {
+    padding: 10px 30px;
+    border-radius: 24px;
+    border: 1px solid var(--main-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: .3s;
+}
+.cta-btn:hover,
+.cta-btn.inactive {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+.cta-btn.inactive:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.cta-btn.rail {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.cta-btn.rail:hover {
+    background-color: var(--primary-color);
+}
+.cta-btn.inactive.rail:hover {
+    background-color: var(--bg-color);
+}
+
+.cta-btn.rail::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #fff;
+    border-radius: inherit;
+    transition: .3s;
+}
+.cta-btn.rail:hover::before {
+    width: 100%;
+}
+
+.cta-btn.inactive.rail::before {
+    background-color: var(--primary-color);
+}
+/* Header End */
