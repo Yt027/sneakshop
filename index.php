@@ -16,7 +16,7 @@ define("TITLE", "SneakShop | Leader malien du Ecommerce");
     <!-- Icons -->
     <link rel="stylesheet" href="<?=APP_URL?>assets/styles/libs/boxicons-2.1.4/css/boxicons.min.css">
     <!-- SplideJS -->
-    <link rel="stylesheet" href="<?=APP_URL?>/assets/scripts/libs/splide-4.1.3/css/splide.min.css">
+    <link rel="stylesheet" href="<?=APP_URL?>assets/scripts/libs/splide-4.1.3/css/splide.min.css">
     <!-- Page styling -->
     <link rel="stylesheet" href="<?=APP_URL?>assets/styles/main.css">
     <link rel="stylesheet" href="<?=APP_URL?>assets/styles/<?=PAGE?>.css">
@@ -27,9 +27,9 @@ define("TITLE", "SneakShop | Leader malien du Ecommerce");
         <a href="<?=APP_URL?>" class="logo"><?=APP_NAME?></a>
 
         <nav class="navbar">
-            <a href="<?=APP_URL?>/shop" class="link">Boutique</a>
-            <a href="<?=APP_URL?>/about" class="link">A propos</a>
-            <a href="<?=APP_URL?>/contact" class="link">Contact</a>
+            <a href="<?=APP_URL?>shop" class="link">Boutique</a>
+            <a href="<?=APP_URL?>about" class="link">A propos</a>
+            <a href="<?=APP_URL?>contact" class="link">Contact</a>
         </nav>
 
         <div class="cta">
@@ -155,16 +155,16 @@ define("TITLE", "SneakShop | Leader malien du Ecommerce");
 
         <div class="left">
             <nav class="wrapper links">
-                <a href="<?=APP_URL?>/shop/" class="link">Chaussures Homme</a>
-                <a href="<?=APP_URL?>/shop/" class="link">Chaussures Femme</a>
-                <a href="<?=APP_URL?>/shop/" class="link">Tendances</a>
-                <a href="<?=APP_URL?>/shop/" class="link">Nouveautés</a>
+                <a href="<?=APP_URL?>shop/" class="link">Chaussures Homme</a>
+                <a href="<?=APP_URL?>shop/" class="link">Chaussures Femme</a>
+                <a href="<?=APP_URL?>shop/" class="link">Tendances</a>
+                <a href="<?=APP_URL?>shop/" class="link">Nouveautés</a>
             </nav>
 
             <nav class="wrapper links">
-                <a href="<?=APP_URL?>/shop/" class="link">Boutique</a>
-                <a href="<?=APP_URL?>/about/" class="link">A propos</a>
-                <a href="<?=APP_URL?>/contact/" class="link">Contact</a>
+                <a href="<?=APP_URL?>shop/" class="link">Boutique</a>
+                <a href="<?=APP_URL?>about/" class="link">A propos</a>
+                <a href="<?=APP_URL?>contact/" class="link">Contact</a>
             </nav>
 
             <address class="wrapper address">
@@ -205,10 +205,10 @@ define("TITLE", "SneakShop | Leader malien du Ecommerce");
 
 
     <!-- SplideJS -->
-    <script src="<?=APP_URL?>/assets/scripts/libs/splide-extension-auto-scroll.min.js"></script>
-    <script src="<?=APP_URL?>/assets/scripts/libs/splide-4.1.3/js/splide.min.js"></script>
+    <script src="<?=APP_URL?>assets/scripts/libs/splide-extension-auto-scroll.min.js"></script>
+    <script src="<?=APP_URL?>assets/scripts/libs/splide-4.1.3/js/splide.min.js"></script>
     <!-- Page Scripts -->
-    <script src="<?=APP_URL?>/assets/scripts/main.js"></script>
-    <script src="<?=APP_URL?>/assets/scripts/<?=PAGE?>.js"></script>
+    <script src="<?=APP_URL?>assets/scripts/main.js"></script>
+    <script src="<?=APP_URL?>assets/scripts/<?=PAGE?>.js"></script>
 </body>
 </html>
