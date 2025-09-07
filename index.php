@@ -82,11 +82,59 @@ define("TITLE", "SneakShop | Leader malien du Ecommerce");
         </section>
         <!-- Value Section End -->
 
-        
+        <!-- Fashion Section Start -->
+        <section class="fashion">
+            <h2 class="section-title">Nos dernières collections</h2>
+            <div class="wrapper product-container">
+                <div class="product-card">
+                    <img src="./assets/images/Shoes-White.H03.2k.png" alt="" loading="lazy">
+                    <div class="content">
+                        <div class="top">
+                            <h3 class="name">Nike Air Max 270 React</h3>
+                            <span class="price">75 000 FCFA</span>
+                        </div>
+                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="./assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
+                    <div class="content">
+                        <div class="top">
+                            <h3 class="name">Nike Air Max 270 React</h3>
+                            <span class="price">75 000 FCFA</span>
+                        </div>
+                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="./assets/images/Male-Sneakers.H03.2k.png" alt="" loading="lazy">
+                    <div class="content">
+                        <div class="top">
+                            <h3 class="name">Nike Air Max</h3>
+                            <span class="price">75 000 FCFA</span>
+                        </div>
+                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="./assets/images/Leather-Sports-Sneakers.H03.2k.png" alt="" loading="lazy">
+                    <div class="content">
+                        <div class="top">
+                            <h3 class="name">Nike Air Max 270 React</h3>
+                            <span class="price">75 000 FCFA</span>
+                        </div>
+                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fashion Section End -->
 
         <!-- Partner Section Start -->
         <section class="partner splide" aria-label="Nos partenaires">
-            <h2 class="section-title">Ils nous font confiance</h2>
+            <!-- <h2 class="section-title">Ils nous font confiance</h2>
+            <p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, voluptatibus! Quo natus odio quisquam, aspernatur nam dolore!</p> -->
             <div class="splide__track wrapper">
                 <ul class="splide__list">
                     <li class="splide__slide item"><img src="./assets/images/partners/cleanco-1.png" alt=""></li>
@@ -100,6 +148,46 @@ define("TITLE", "SneakShop | Leader malien du Ecommerce");
         <!-- Partner Section End -->
     </main>
     <!-- HOME PAGE End -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <h2 class="sitename"><?=APP_NAME?></h2>
+
+        <div class="left">
+            <nav class="links">
+                <a href="<?=APP_URL?>/shop/" class="link">Boutique</a>
+                <a href="<?=APP_URL?>/shop/" class="link">A propos</a>
+                <a href="<?=APP_URL?>/shop/" class="link">Contact</a>
+            </nav>
+
+            <address class="address">
+                <a href="" class="link">
+                    <i class="bx bxl-facebook-circle icon"></i>
+                    <span class="text">Facebook</span>
+                </a>
+
+                <a href="" class="link">
+                    <i class="bx bxl-instagram-alt icon"></i>
+                    <span class="text">Instagram</span>
+                </a>
+
+                <a href="" class="link">
+                    <i class="bx bxl-telegram icon"></i>
+                    <span class="text">Telegram</span>
+                </a>
+            </address>
+        </div>
+
+        <div class="right">
+            <div class="cta">
+                <div class="cta-btn rail">
+                    <span class="text">Contactez Nous</span>
+                    <i class="bx bxl-whatsapp icon"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
 
 
     <!-- SplideJS -->
