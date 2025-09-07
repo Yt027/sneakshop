@@ -1,5 +1,5 @@
 <?php
-require "./configs/main.php";
+require __DIR__ . "/../configs/main.php";
 // Page configs
 define("PAGE", "home");
 define("TITLE", "SneakShop | Leader malien du Ecommerce");

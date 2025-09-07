@@ -7,6 +7,8 @@ $routes = [
     '/' => 'home',
     '/home' => 'home',
     '/index' => 'home',
+    '/shop' => 'shop',
+    '/boutique' => 'shop',
     '/about' => 'about',
     '/contact' => 'contact'
 ];
