@@ -104,4 +104,8 @@ section {
 .product .content .counter-add-to-cart {
     margin-top: 20px;
 }
+
+.large-desc {
+    max-width: 600px;
+}
 /* Product Section End */

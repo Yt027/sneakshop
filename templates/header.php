@@ -9,7 +9,7 @@
     </nav>
 
     <div class="cta">
-        <div class="cta-btn">S'inscrire</div>
+        <a href="<?=APP_URL?>signin" class="cta-btn">S'inscrire</a>
         <div class="cta-btn inactive">Connexion</div>
     </div>
 </header>
