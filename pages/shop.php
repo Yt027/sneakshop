@@ -1,8 +1,8 @@
 <?php
 require __DIR__ . "/../configs/main.php";
 // Page configs
-define("PAGE", "pageName");
-define("TITLE", "SneakShop");
+define("PAGE", "shop");
+define("TITLE", "Boutique | SneakShop");
 ?>
 
 
@@ -22,7 +22,78 @@ define("TITLE", "SneakShop");
 
     <!-- HOME PAGE Start -->
     <main class="page">
+        <section class="hero">
+            <h1></span class="sitename"><?=APP_NAME?></span> tout pour bouger</h1>
+            <form class="search-product" method="post">
+                <input type="search" name="product-name" class="box" id="" placeholder="Chercher">
+                <button type="submit" class="btn"><i class="bx bx-search-alt-2 icon"></i></button>
+            </form>
+        </section>
 
+        <section class="product">
+            <div class="product-container">
+                <div class="product-card">
+                    <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
+                    <div class="content">
+                        <div class="top">
+                            <h3 class="name">Nike Air Max 270 React</h3>
+                            <span class="price">75 000 FCFA</span>
+                        </div>
+                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
+                    <div class="content">
+                        <div class="top">
+                            <h3 class="name">Nike Air Max 270 React</h3>
+                            <span class="price">75 000 FCFA</span>
+                        </div>
+                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
+                    <div class="content">
+                        <div class="top">
+                            <h3 class="name">Nike Air Max 270 React</h3>
+                            <span class="price">75 000 FCFA</span>
+                        </div>
+                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
+                    <div class="content">
+                        <div class="top">
+                            <h3 class="name">Nike Air Max 270 React</h3>
+                            <span class="price">75 000 FCFA</span>
+                        </div>
+                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
+                    <div class="content">
+                        <div class="top">
+                            <h3 class="name">Nike Air Max 270 React</h3>
+                            <span class="price">75 000 FCFA</span>
+                        </div>
+                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
+                    <div class="content">
+                        <div class="top">
+                            <h3 class="name">Nike Air Max 270 React</h3>
+                            <span class="price">75 000 FCFA</span>
+                        </div>
+                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <!--  PAGE End -->
 

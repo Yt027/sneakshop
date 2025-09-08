@@ -1,0 +1,107 @@
+/* General Styles Start */
+section {
+    padding: 40px;
+}
+/* General Styles End */
+
+/* Product Section Start */
+.product {
+    display: flex;
+    gap: 20px;
+}
+
+.product .images {
+    width: 50%;
+}
+
+.product .images .main-image {
+    /* background-color: red; */
+}
+
+.product .images .main-image img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+.product .images .galery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.product .images .galery .item {
+    max-width: 250px;
+    height: 100px;
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.175);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: .25s;
+}
+.product .images .galery .item:hover {
+    transform: scale(105%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.product .images .galery .item img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+.product .content {
+    width: 50%;
+    padding-left: 40px;
+    min-width: 360px;
+}
+
+.product .content .name {
+    font-size: 3rem;
+    color: var(--color);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.product .content .category {
+    font-size: .8rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.product .content .star-notation {
+    margin-top: 10px;
+    font-size: 2.6rem;
+    color: var(--primary-color);
+}
+
+.product .content .desc {
+    margin-top: 40px;
+    max-width: 380px;
+}
+
+.product .content .caracteristics {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: fit-content;
+    gap: 14px 24px;
+}
+
+.product .content .caracteristics .item {
+    font-weight: 500;
+    font-size: 1.2rem;
+    background-color: var(--bg-color);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.product .content .counter-add-to-cart {
+    margin-top: 20px;
+}
+/* Product Section End */

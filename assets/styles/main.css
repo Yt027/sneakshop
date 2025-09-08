@@ -235,6 +235,113 @@ a {
 }
 /* Product Cards End */
 
+/* Search Product Form Start */
+.search-product {
+    height: 35px;
+    display: flex;
+    background-color: var(--bg-color);
+    border-radius: 25px;
+    overflow: hidden;
+    padding-left: 10px;
+    border: none;
+    box-shadow: 1px 2px 13px -5px rgba(255, 255, 255, .3);
+}
+.search-product * {
+    border: none;
+}
+
+.search-product .box {
+    width: 200px;
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.search-product .btn {
+    width: 50px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    cursor: pointer;
+    transition: .3s;
+}
+.search-product .btn:hover {
+    background-color: var(--primary-color);
+}
+.search-product .btn:active {
+    background-color: var(--color);
+}
+/* Search Product Form End */
+
+/* Countered Add to Cart Button Start */
+.counter-add-to-cart {
+    height: 60px;
+    display: flex;
+    gap: 0;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    width: fit-content;
+    padding-left: 5px;
+    overflow: hidden;
+    /* border-radius: 6px; */
+}
+
+.counter-add-to-cart .counter {
+    display: flex;
+}
+
+.counter-add-to-cart .counter input.number {
+    font-size: 1.3rem;
+    min-width: unset;
+    width: 60px;
+    text-align: center;
+}
+.counter-add-to-cart .counter input.number::-webkit-inner-spin-button,
+.counter-add-to-cart .counter input.number::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+.counter-add-to-cart .counter input.number{
+    -moz-appearance: textfield;
+}
+.counter-add-to-cart .counter input.number::-ms-clear{
+    display: none;
+}
+
+.counter-add-to-cart .counter .btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.counter-add-to-cart .counter .btns .btn {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    transition: .2s;
+}
+.counter-add-to-cart .counter .btns .btn:hover {
+    border-color: var(--primary-color);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+.counter-add-to-cart .cta-btn {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: var(--primary-color);
+    /* border: none; */
+}
+/* Countered Add to Cart Button End */
+
 
 /* Footer Start */
 .footer {
