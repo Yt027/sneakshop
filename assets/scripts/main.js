@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded",() => {
 
         cartAdd.querySelectorAll(".btn").forEach(btn => {
             btn.onclick = () => {
-                min = Number(cartAdd.querySelector("input.number").getAttribute("min")) || undefined
-                max = Number(cartAdd.querySelector("input.number").getAttribute("max")) || undefined
+                let min = Number(cartAdd.querySelector("input.number").getAttribute("min")) || undefined
+                let max = Number(cartAdd.querySelector("input.number").getAttribute("max")) || undefined
 
-                actualV = Number(cartAdd.querySelector("input.number").value)
-                change = (btn.className.includes("plus")) ? +1 : -1;
+                let actualV = Number(cartAdd.querySelector("input.number").value)
+                let change = (btn.className.includes("plus")) ? +1 : -1;
 
-                newV = actualV + change
+                let newV = actualV + change
                 if (min && newV < min) { newV = min }
                 if (max && newV > max) { newV = max }
                 cartAdd.querySelector("input.number").value = newV
