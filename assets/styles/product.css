@@ -14,9 +14,9 @@ section {
     width: 50%;
 }
 
-.product .images .main-image {
-    /* background-color: red; */
-}
+/* .product .images .main-image {
+    background-color: red;
+} */
 
 .product .images .main-image img {
     width: 100%;
