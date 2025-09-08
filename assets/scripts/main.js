@@ -1,5 +1,5 @@
-// Countered Add to cart button Start
 document.addEventListener("DOMContentLoaded",() => {
+    // Countered Add to cart button Start
     document.querySelectorAll(".counter-add-to-cart").forEach(cartAdd => {
         cartAdd.addEventListener("submit", e => {
             e.preventDefault()
@@ -20,5 +20,17 @@ document.addEventListener("DOMContentLoaded",() => {
             }
         })
     })
+    // Countered Add to cart button End
+
+    // Form Password Input Start
+    document.querySelectorAll("form.default .password:has(.btn)").forEach(passwordBox => {
+        let passwordInput = passwordBox.querySelector("input");
+        let passwordBtn = passwordBox.querySelector(".btn");
+
+        passwordBtn.onclick = () => {
+            passwordBtn.querySelector(".bx").className = (passwordBtn.querySelector(".bx").className.includes("bxs-show")) ? "bx bxs-low-vision" : "bx bxs-show"
+            passwordInput.type = (passwordBtn.querySelector(".bx").className.includes("bxs-show")) ? "text" : "password";
+        }
+    })
+    // Form Password Input End
 })
-// Countered Add to cart button End

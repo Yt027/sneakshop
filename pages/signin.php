@@ -24,7 +24,7 @@ define("TITLE", "SneakShop");
     <main class="page">
         <form action="" class="default">
             <div class="image">
-                <img src="<?=APP_URL?>assets/images/young-athlete-man-tying-lace-on-running-shoes-duri-2022-12-03-22-10-14-utc-3.jpg" alt="">
+                <img loading="lazy" src="<?=APP_URL?>assets/images/young-athlete-man-tying-lace-on-running-shoes-duri-2022-12-03-22-10-14-utc-3.jpg" alt="">
             </div>
 
             <div class="content">
@@ -48,8 +48,10 @@ define("TITLE", "SneakShop");
                 <label class="password">
                     <span class="text">Mot de passe</span>
                     <div class="box">
-                        <input type="text" name="password" id="">
-                        <div class="btn bx bxs-show"></div>
+                        <input type="password" name="password" id="" minlength="8">
+                        <div class="btn">
+                            <i class="bx bxs-low-vision"></i>
+                        </div>
                     </div>
                 </label>
 
