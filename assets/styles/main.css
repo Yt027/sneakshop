@@ -508,6 +508,10 @@ form.sign label:has(.name) {
     gap: 14px;
 }
 
+.footer .right .cta .cta-btn::before {
+    background-color: var(--sd-bg-color);
+}
+
 .footer .copyright {
     flex: 0 0 100%;
     margin: 10px 0px 5px;
