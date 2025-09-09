@@ -32,23 +32,23 @@ define("TITLE", "SneakShop");
 
                 <label>
                     <span class="text">Prénom</span>
-                    <input type="text" name="firstName" id="" class="name" placeholder="Prénom: ">
+                    <input type="text" name="firstName" id="" class="name" placeholder="Prénom: " required aria-required="true">
                 </label>
 
                 <label>
                     <span class="text">Nom</span>
-                    <input type="text" name="lastName" id="" class="name" placeholder="Nom: ">
+                    <input type="text" name="lastName" id="" class="name" placeholder="Nom: " required aria-required="true">
                 </label>
 
                 <label>
                     <span class="text">Adresse mail</span>
-                    <input type="email" name="email" id="" placeholder="Email: ">
+                    <input type="email" name="email" id="" placeholder="Email: " required aria-required="true">
                 </label>
 
                 <label class="password">
                     <span class="text">Mot de passe</span>
                     <div class="box">
-                        <input type="password" name="password" id="" minlength="8">
+                        <input type="password" name="password" id="" minlength="8" required aria-required="true">
                         <div class="btn">
                             <i class="bx bxs-low-vision"></i>
                         </div>
@@ -57,7 +57,7 @@ define("TITLE", "SneakShop");
 
                 <label class="password">
                     <span class="text">Confirmation</span>
-                    <input type="password" name="password-conf" id="">
+                    <input class="password-conf" data-target="form .password .box input" type="password" name="password-conf" id="" required aria-required="true">
                 </label>
 
                 <button type="submit" class="cta-btn submit">Continuer</button>

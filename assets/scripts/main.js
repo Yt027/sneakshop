@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded",() => {
     // Countered Add to cart button End
 
     // Form Password Input Start
+        // Input type Changer
     document.querySelectorAll("form.default .password:has(.btn)").forEach(passwordBox => {
         let passwordInput = passwordBox.querySelector("input");
         let passwordBtn = passwordBox.querySelector(".btn");
@@ -31,6 +32,15 @@ document.addEventListener("DOMContentLoaded",() => {
             passwordBtn.querySelector(".bx").className = (passwordBtn.querySelector(".bx").className.includes("bxs-show")) ? "bx bxs-low-vision" : "bx bxs-show"
             passwordInput.type = (passwordBtn.querySelector(".bx").className.includes("bxs-show")) ? "text" : "password";
         }
+    })
+
+        // Reactive Password Confirmation
+    document.querySelectorAll("form.default .password-conf").forEach(confirmator => {
+        let target = document.querySelector(confirmator.dataset["target"])
+
+        confirmator;addEventListener("input", () => {
+            confirmator.classList.toggle("valid", confirmator.value == target.value)
+        })
     })
     // Form Password Input End
 })
