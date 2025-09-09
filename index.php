@@ -12,7 +12,8 @@ $routes = [
     '/product' => 'product',
     '/about' => 'about',
     '/contact' => 'contact',
-    '/signin' => 'signin'
+    '/signin' => 'signin',
+    '/login' => 'login'
 ];
 
 if (array_key_exists($request, $routes)) {

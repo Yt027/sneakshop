@@ -343,9 +343,9 @@ a {
 /* Countered Add to Cart Button End */
 
 /* Default Form Styles Start */
-form.default img {
+/* form.default img {
     max-width: 300px;
-}
+} */
 
 form.default {
     max-width: 800px;
@@ -412,6 +412,47 @@ form.default .submit:hover {
     background-color: var(--sd-bg-color);
 }
 /* Default Form Styles End */
+
+/* Signin - Signout Form Styles Start */
+form.sign {
+    display: flex;
+    overflow: hidden;
+}
+
+form.sign .image {
+    flex: 0 0 50%;
+}
+form.sign .image img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(85%);
+}
+
+form.sign .content {
+    padding: 40px 40px 30px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: start;
+}
+
+form.sign h1 {
+    font-size: 2rem;
+    line-height: 2;
+    letter-spacing: 1px;
+    color: var(--color);
+    font-weight: 800;
+    font-style: italic;
+}
+
+form.sign label:has(.name) {
+    flex: 0 0 calc((100% - 14px) / 2);
+}
+/* Signin - Signout Form Styles End */
 
 
 /* Footer Start */

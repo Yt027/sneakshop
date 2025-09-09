@@ -1,0 +1,24 @@
+/* General Styles Start */
+.page {
+    min-height: calc(100vh - 85px);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* General Styles End */
+
+/* Form Styles Start */
+form {
+    min-height: 200px;
+    flex-direction: row-reverse;
+}
+
+form.default.sign .image img {
+    filter: brightness(100%);
+}
+
+form .content {
+    align-self: center;
+}
+/* Form Styles End */

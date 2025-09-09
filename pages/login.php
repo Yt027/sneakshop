@@ -1,45 +1,36 @@
 <?php
 require __DIR__ . "/../configs/main.php";
 // Page configs
-define("PAGE", "signin");
-define("TITLE", "Inscription | SneakShop");
+define("PAGE", "login");
+define("TITLE", "Connexion | SneakShop");
 ?>
 
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <?php 
-        // Adding general head
-        include __DIR__ . "/../templates/starter.php"
+    <?php
+    // Adding general head
+    include __DIR__ . "/../templates/starter.php"
     ?>
 </head>
+
 <body>
     <?php
-        // Adding Header
-        include __DIR__ . "/../templates/header.php"
+    // Adding Header
+    include __DIR__ . "/../templates/header.php"
     ?>
 
     <!-- HOME PAGE Start -->
     <main class="page">
         <form action="" class="default sign">
             <div class="image">
-                <img loading="lazy" src="<?=APP_URL?>assets/images/young-athlete-man-tying-lace-on-running-shoes-duri-2022-12-03-22-10-14-utc-3.jpg" alt="">
+                <img loading="lazy" src="<?= APP_URL ?>assets/images/cropped-image-of-basketball-player-playing-basketb-2022-12-16-20-45-01-utc-1.jpg" alt="">
             </div>
 
             <div class="content">
-                <h1>Rejoignez l'aventure</h1>
-
-                <label>
-                    <span class="text">Prénom</span>
-                    <input type="text" name="firstName" id="" class="name" placeholder="Prénom: " required aria-required="true">
-                </label>
-
-                <label>
-                    <span class="text">Nom</span>
-                    <input type="text" name="lastName" id="" class="name" placeholder="Nom: " required aria-required="true">
-                </label>
-
+                <h1>Restez en forme</h1>
                 <label>
                     <span class="text">Adresse mail</span>
                     <input type="email" name="email" id="" placeholder="Email: " required aria-required="true">
@@ -55,11 +46,6 @@ define("TITLE", "Inscription | SneakShop");
                     </div>
                 </label>
 
-                <label class="password">
-                    <span class="text">Confirmation</span>
-                    <input class="password-conf" data-target="form .password .box input" type="password" name="password-conf" id="" required aria-required="true">
-                </label>
-
                 <button type="submit" class="cta-btn submit">Continuer</button>
             </div>
         </form>
@@ -70,4 +56,5 @@ define("TITLE", "Inscription | SneakShop");
     <script src="<?= APP_URL ?>assets/scripts/main.js"></script>
     <script src="<?= APP_URL ?>assets/scripts/<?= PAGE ?>.js"></script>
 </body>
+
 </html>

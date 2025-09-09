@@ -10,7 +10,7 @@
 
     <div class="cta">
         <a href="<?=APP_URL?>signin" class="cta-btn">S'inscrire</a>
-        <div class="cta-btn inactive">Connexion</div>
+        <a href="<?=APP_URL?>login" class="cta-btn inactive">Connexion</a>
     </div>
 </header>
 <!-- Header End -->
