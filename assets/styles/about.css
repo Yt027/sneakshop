@@ -1,9 +1,9 @@
 /* Hero Section Start */
 .hero {
-    background-image: url(../images/sneakers-black-grey-dark-background-concept-photo-2023-08-01-21-06-54-utc-1.jpg);
+    background-image: url(../images/friends.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center -140px;
     height: 300px;
     z-index: 0;
 
