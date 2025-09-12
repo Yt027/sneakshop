@@ -12,6 +12,7 @@ $routes = [
     '/product' => 'product',
     '/about' => 'about',
     '/contact' => 'contact',
+    '/cart' => 'cart',
     '/signin' => 'signin',
     '/login' => 'login'
 ];
