@@ -289,35 +289,49 @@ a {
     /* border-radius: 6px; */
 }
 
-.counter-add-to-cart .counter {
+.counter-add-to-cart .counter,
+.cart-counter {
     display: flex;
 }
 
-.counter-add-to-cart .counter input.number {
+.cart-counter {
+    border: 1px solid var(--primary-color);
+    width: fit-content;
+    height: 40px;
+}
+
+.counter-add-to-cart .counter input.number,
+.cart-counter input.number {
     font-size: 1.3rem;
     min-width: unset;
     width: 60px;
     text-align: center;
 }
 .counter-add-to-cart .counter input.number::-webkit-inner-spin-button,
-.counter-add-to-cart .counter input.number::-webkit-outer-spin-button{
+.counter-add-to-cart .counter input.number::-webkit-outer-spin-button,
+.cart-counter input.number::-webkit-inner-spin-button,
+.cart-counter input.number::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-.counter-add-to-cart .counter input.number{
+.counter-add-to-cart .counter input.number,
+.cart-counter input.number {
     -moz-appearance: textfield;
 }
-.counter-add-to-cart .counter input.number::-ms-clear{
+.counter-add-to-cart .counter input.number::-ms-clear,
+.cart-counter input.number::-ms-clear {
     display: none;
 }
 
-.counter-add-to-cart .counter .btns {
+.counter-add-to-cart .counter .btns,
+.cart-counter .btns {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.counter-add-to-cart .counter .btns .btn {
+.counter-add-to-cart .counter .btns .btn,
+.cart-counter .btns .btn {
     background-color: var(--primary-color);
     color: var(--bg-color);
     border: 1px solid transparent;
@@ -328,7 +342,12 @@ a {
     height: 30px;
     transition: .2s;
 }
-.counter-add-to-cart .counter .btns .btn:hover {
+.cart-counter .btns .btn {
+    width: 20px;
+    height: 20px;
+}
+.counter-add-to-cart .counter .btns .btn:hover,
+.cart-counter .btns .btn:hover {
     border-color: var(--primary-color);
     background-color: var(--bg-color);
     color: var(--primary-color);
