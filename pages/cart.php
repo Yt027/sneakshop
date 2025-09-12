@@ -22,7 +22,29 @@ define("TITLE", "Panier | SneakShop");
 
     <!-- HOME PAGE Start -->
     <main class="page">
+        <section class="hero">
+            <h1></span class="sitename">Houra, vous y êtes !</h1>
+        </section>
 
+        <section class="cart">
+            <div class="resume">
+
+            </div>
+
+            <div class="wrapper">
+                <div class="item">
+                    <div class="image">
+                        <img src="../assets/images/Shoes-White.H03.2k.png" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h2>Nike Air Force 1 '07</h2>
+                        <p class="category">Male sneakers</p>
+                        <p class="price">12.000F CFA
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <!--  PAGE End -->
 
