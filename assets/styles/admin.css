@@ -1,2 +1,28 @@
+/* General Styles Start */
+.page {
+    min-height: calc(100vh - 85px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* General Styles End */
+
 /* Form Styles Start */
+form.admin {
+    padding: 40px;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 300px;
+    max-width: 500px;
+    width: 100%;
+    background-color: var(--sd-bg-color);
+    /* align-items: center; */
+}
+
+form.admin .submit {
+    align-self: center;
+}
+form.admin .submit::before {
+    background-color: var(--sd-bg-color);
+}
 /* Form Styles End */

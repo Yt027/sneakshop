@@ -24,8 +24,8 @@ define("TITLE", "Connexion | SneakShop");
 
     <!-- HOME PAGE Start -->
     <main class="page">
-        <form action="" class="default sign">
-            <h1>Restez en forme</h1>
+        <form action="" class="default sign admin">
+            <h1>Bienvenue Root</h1>
             <label>
                 <span class="text">Adresse mail</span>
                 <input type="email" name="email" id="" placeholder="Email: " required aria-required="true">
@@ -41,7 +41,7 @@ define("TITLE", "Connexion | SneakShop");
                 </div>
             </label>
 
-            <button type="submit" class="cta-btn submit">Continuer</button>
+            <button type="submit" class="cta-btn rail submit">Continuer</button>
         </form>
     </main>
     <!--  PAGE End -->
