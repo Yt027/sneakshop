@@ -17,6 +17,7 @@ $routes = [
     '/login' => 'login',
     '/admin' => 'admin',
     '/dashboard' => 'dashboard',
+    '/admin-add-product' => 'add-product',
 ];
 
 if (array_key_exists($request, $routes)) {
