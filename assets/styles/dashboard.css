@@ -1,0 +1,128 @@
+/* App Style Start */
+.app {
+    height: calc(100vh - 85px);
+    max-height: min(1000px, calc(100vh - 85px));
+
+    display: flex;
+    align-items: start;
+    flex-direction: row-reverse;
+}
+/* App Style End */
+
+/* Sidebar Start */
+.sidebar {
+    width: 170px;
+    padding: 20px 10px;
+    margin: auto 10px auto 0;
+    border-radius: 14px;
+    overflow-x: hidden;
+
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: right;
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.2);
+    transition: .3s;
+}
+.sidebar.reduced {
+    width: 60px;
+}
+
+.sidebar .logo,
+.sidebar .switch {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+    color: var(--bg-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 1.1rem;
+    font-weight: 900;
+    pointer-events: none;
+}
+
+.sidebar .switch {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 6px;
+    margin-bottom: 40px;
+    font-size: .8rem;
+    color: var(--bg-color);
+    
+    pointer-events: all;
+    cursor: pointer;
+    transition: .25s;
+}
+.sidebar .switch:hover {
+    background-color: var(--bg-color);
+    color: var(--main-color);
+}
+
+.sidebar .switch .icon {
+    transform-origin: center 5.5px;
+    transition: .25s;
+}
+.sidebar.reduced .switch .icon {
+    transform: rotate(180deg);
+}
+
+.sidebar .links {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    list-style: none;
+}
+
+.sidebar .links .item {
+    height: fit-content;
+    display: flex;
+    /* gap: 10px; */
+    align-items: center;
+    flex-direction: row-reverse;
+    
+    background-color: var(--main-color);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+    color: var(--bg-color);
+    font-size: 1.05rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .25s;
+}
+.sidebar .links .item:hover {
+    background-color: var(--bg-color);
+    color: var(--main-color);
+}
+.sidebar.reduced .links .item {
+    border-radius: 6px;
+}
+
+.sidebar.reduced .links .item .text {
+    opacity: 0;
+}
+
+.sidebar .links .item .icon {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+    /* background-color: red; */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .25s;
+}
+.sidebar.reduced .links .item .icon {
+    font-size: 1.8rem;
+}
+/* Sidebar End */

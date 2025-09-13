@@ -15,7 +15,8 @@ $routes = [
     '/cart' => 'cart',
     '/signin' => 'signin',
     '/login' => 'login',
-    '/admin' => 'admin'
+    '/admin' => 'admin',
+    '/dashboard' => 'dashboard',
 ];
 
 if (array_key_exists($request, $routes)) {
