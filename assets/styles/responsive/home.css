@@ -67,7 +67,7 @@
 /* Value Section Start */
 @media screen and (max-width: 800px) {
     .value {
-        margin-top: 60;
+        margin-top: 60px;
         flex-wrap: wrap;
         gap: 24px;
     }
