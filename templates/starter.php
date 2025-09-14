@@ -8,3 +8,4 @@
 <link rel="stylesheet" href="<?= APP_URL ?>assets/styles/main.css">
 <link rel="stylesheet" href="<?= APP_URL ?>assets/styles/responsive/main.css">
 <link rel="stylesheet" href="<?= APP_URL ?>assets/styles/<?= PAGE ?>.css">
+<link rel="stylesheet" href="<?= APP_URL ?>assets/styles/responsive/<?= PAGE ?>.css">
