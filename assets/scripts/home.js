@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
       pauseOnFocus: false // Pas d'arrêt au focus
     },
     breakpoints: {
-      1200: { perPage: 4 }, // Grand écran
-      992: { perPage: 3 }, // Tablette paysage
-      768: { perPage: 2 }, // Tablette portrait
-      480: { perPage: 1 } // Mobile
+      1200: { perPage: 5 }, // Grand écran
+      800: { perPage: 4 }, // Tablette paysage
+      620: { perPage: 3 }, // Tablette portrait
+      // 430: { perPage: 3 } // Mobile
     }
   }).mount(window.splide.Extensions)
 })

@@ -122,7 +122,6 @@ define("TITLE", "SneakShop | Leader malien du Ecommerce");
             <div class="splide__track wrapper">
                 <ul class="splide__list">
                     <li class="splide__slide item"><img src="<?=APP_URL?>assets/images/partners/cleanco-1.png" alt=""></li>
-                    <li class="splide__slide item"><img src="<?=APP_URL?>assets/images/partners/latest-logo-extraspace-dark-1.png" alt=""></li>
                     <li class="splide__slide item"><img src="<?=APP_URL?>assets/images/partners/logo-dark-1-1.png" alt=""></li>
                     <li class="splide__slide item"><img src="<?=APP_URL?>assets/images/partners/navaro-black-1.png" alt=""></li>
                     <li class="splide__slide item"><img src="<?=APP_URL?>assets/images/partners/sharpcuts-black-1.png" alt=""></li>
