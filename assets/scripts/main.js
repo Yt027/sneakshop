@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded",() => {
+    const header = document.querySelector("header.header")
+
+    // Mobile Menu Switch Start
+    header.querySelector(".menu").addEventListener("click", () => {
+        header.classList.toggle("menu-deployed")
+    })
+    // Mobile Menu Switch End
+
     // Countered Add to cart button Start
     document.querySelectorAll(".counter-add-to-cart").forEach(cartAdd => {
         cartAdd.addEventListener("submit", e => {

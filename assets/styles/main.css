@@ -98,6 +98,46 @@ a {
     display: flex;
     gap: 20px;
 }
+
+
+
+.header .menu {
+    display: none;
+    width: 30px;
+    height: 30px;
+
+    position: relative;
+    cursor: pointer;
+}
+
+.header .menu span {
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    width: 22px;
+    height: 2px;
+    background-color: var(--color);
+    transition: .25s;
+    transform-origin: center;
+}
+
+.header .menu span:nth-child(1) {
+    transform: translateY(-5px);
+}
+.header .menu span:nth-child(3) {
+    transform: translateY(5px);
+}
+
+.header.menu-deployed .menu span:nth-child(1) {
+    transform: translate(0, 0) rotate(45deg);
+}
+.header.menu-deployed .menu span:nth-child(2) {
+    transition: none;
+    opacity: 0;
+}
+.header.menu-deployed .menu span:nth-child(3) {
+    transform: translate(0, 0) rotate(-45deg);
+}
 /* Header End */
 
 /* CTA Button Start */

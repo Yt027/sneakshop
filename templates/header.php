@@ -12,5 +12,11 @@
         <a href="<?=APP_URL?>signin" class="cta-btn">S'inscrire</a>
         <a href="<?=APP_URL?>login" class="cta-btn inactive">Connexion</a>
     </div>
+
+    <div class="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </header>
 <!-- Header End -->
