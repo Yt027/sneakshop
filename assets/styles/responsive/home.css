@@ -1,3 +1,18 @@
+/* General Styles Start */
+@media screen and (max-width: 800px) {
+    section {
+        padding: 30px;
+    }
+}
+
+
+@media screen and (max-width: 620px) {
+    section {
+        padding: 20px;
+    }
+}
+/* General Styles End */
+
 /* Home Section Start */
 @media screen and (max-width: 1024px) {
     .hero {
@@ -47,3 +62,42 @@
     }
 }
 /* Home Section End */
+
+
+/* Value Section Start */
+@media screen and (max-width: 800px) {
+    .value {
+        margin-top: 60;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    
+    .value .item {
+        flex: 0 0 calc((100% - 24px) / 2);
+        max-width: unset;
+    }
+}
+
+
+@media screen and (max-width: 620px) {
+    .value {
+        margin-top: 40px;
+    }
+}
+
+
+@media screen and (max-width: 430px) {
+    .value {
+        gap: 16px;
+    }
+
+    .value .item .icon {
+        line-height: 1.4;
+    }
+
+    .value .item .content {
+        /* flex: 0 0 100%; */
+        display: none;
+    }
+}
+/* Value Section End */
