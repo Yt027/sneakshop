@@ -21,7 +21,7 @@ define("TITLE", "SneakShop");
     ?>
 
     <!-- HOME PAGE Start -->
-    <main class="page">
+    <form class="page" method="post">
         <section class="product">
             <div class="images">
                 <div class="main-image">
@@ -51,7 +51,7 @@ define("TITLE", "SneakShop");
                 
                 
                 <label>
-                    <span class="text">Categorie</span>
+                    <!-- <span class="text">Categorie</span> -->
                     <select name="category" id="">
                         <option class="category" value="">category 1</option>
                         <option class="category" value="">category 1</option>
@@ -63,37 +63,37 @@ define("TITLE", "SneakShop");
 
                 <label>
                     <span class="text">Description courte</span>
-                    <textarea name="desc" id="" class="desc" rows="4" cols="40" placeholder="Description"></textarea>
+                    <textarea name="desc" id="" class="desc" rows="4"placeholder="Description"></textarea>
                 </label>
 
                 <div class="caracteristics">
-                    <div class="item">Poids: 1.2Kg</div>
-                    <div class="item">Poids: 1.2Kg</div>
-                    <div class="item">Poids: 1.2Kg</div>
-                    <div class="item">Poids: 1.2Kg</div>
-                    <div class="item">Poids: 1.2Kg</div>
-                    <div class="item">Poids: 1.2Kg</div>
-                    <div class="item">Poids: 1.2Kg</div>
-                    <div class="item">Poids: 1.2Kg</div>
+                    <label>
+                        <span class="text">Caracteristiques du produit</span>
+                        <input type="text" name="caracteristics" id="" placeholder="Clé:Valeur | Clé:valeur | etc..">
+                    </label>
+
+                    <div class="preview">
+                        <span class="item">Poids: 1.2Kg</span>
+                    </div>
                 </div>
 
-                <form action="" class="counter-add-to-cart">
+                <div class="counter-add-to-cart">
                     <div class="counter">
-                        <input type="number" name="" id="" min="1" class="number" value="1">
+                        <input type="number" disabled name="" id="" min="1" class="number" value="1">
 
                         <div class="btns">
-                            <div class="btn plus"><i class="bx bxs-up-arrow"></i></div>
-                            <div class="btn minus"><i class="bx bxs-down-arrow"></i></div>
+                            <div class="item plus"><i class="bx bxs-up-arrow"></i></div>
+                            <div class="item minus"><i class="bx bxs-down-arrow"></i></div>
                         </div>
                     </div>
 
                     <button type="submit" class="cta-btn">Ajouter au panier</button>
-                </form>
+                </div>
             </div>
         </section>
 
         <section class="large-desc"></section>
-    </main>
+    </form>
     <!--  PAGE End -->
 
     <?php
