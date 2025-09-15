@@ -8,16 +8,18 @@ define("TITLE", "SneakShop");
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <?php 
-        // Adding general head
-        include __DIR__ . "/../templates/starter.php"
+    <?php
+    // Adding general head
+    include __DIR__ . "/../templates/starter.php"
     ?>
 </head>
+
 <body>
     <?php
-        // Adding Header
-        include __DIR__ . "/../templates/header.php"
+    // Adding Header
+    include __DIR__ . "/../templates/header.php"
     ?>
 
     <!-- HOME PAGE Start -->
@@ -25,20 +27,20 @@ define("TITLE", "SneakShop");
         <section class="product">
             <div class="images">
                 <div class="main-image">
-                    <img loading="lazy" src="<?=APP_URL?>assets/images/Male-Sneakers.H03.2k.png" alt="">
+                    <img loading="lazy" src="<?= APP_URL ?>assets/images/Male-Sneakers.H03.2k.png" alt="">
                 </div>
 
                 <div class="galery">
                     <div class="item">
-                        <img loading="lazy" src="<?=APP_URL?>assets/images/Male-Sneakers.H03.2k.png" alt="">
-                    </div>
-                    
-                    <div class="item">
-                        <img loading="lazy" src="<?=APP_URL?>assets/images/Male-Sneakers.H03.2k.png" alt="">
+                        <img loading="lazy" src="<?= APP_URL ?>assets/images/Male-Sneakers.H03.2k.png" alt="">
                     </div>
 
                     <div class="item">
-                        <img loading="lazy" src="<?=APP_URL?>assets/images/Male-Sneakers.H03.2k.png" alt="">
+                        <img loading="lazy" src="<?= APP_URL ?>assets/images/Male-Sneakers.H03.2k.png" alt="">
+                    </div>
+
+                    <div class="item">
+                        <img loading="lazy" src="<?= APP_URL ?>assets/images/Male-Sneakers.H03.2k.png" alt="">
                     </div>
                 </div>
             </div>
@@ -48,8 +50,8 @@ define("TITLE", "SneakShop");
                     <span class="text">Nom du produit</span>
                     <input class="name" type="text" name="name" id="" placeholder="Nom " required aria-required="true">
                 </label>
-                
-                
+
+
                 <label>
                     <!-- <span class="text">Categorie</span> -->
                     <select name="category" id="">
@@ -63,7 +65,7 @@ define("TITLE", "SneakShop");
 
                 <label>
                     <span class="text">Description courte</span>
-                    <textarea name="desc" id="" class="desc" rows="4"placeholder="Description"></textarea>
+                    <textarea name="desc" id="" class="desc" rows="4" placeholder="Description"></textarea>
                 </label>
 
                 <div class="caracteristics">
@@ -92,14 +94,42 @@ define("TITLE", "SneakShop");
             </div>
         </section>
 
-        <section class="large-desc"></section>
+        <section class="large-desc">
+            <div class="editor">
+                <div class="text" contenteditable="true" id="content-editor"></div>
+
+                <div class="tools">
+                    <button type="button" class="btn" data-element="bold"><i class="fas fa-bold"></i></button>
+
+                    <button type="button" class="btn" data-element="italic"><i class="fas fa-italic"></i></button>
+
+                    <button type="button" class="btn" data-element="underline"><i class="fas fa-underline"></i></button>
+
+                    <button type="button" class="btn" data-element="insertUnorderedList"><i class="fas fa-list-ul"></i></button>
+
+                    <button type="button" class="btn" data-element="insertOrderedList"><i class="fas fa-list-ol"></i></button>
+
+                    <button type="button" class="btn" data-element="createLink"><i class="fas fa-link"></i></button>
+
+                    <button type="button" class="btn" data-element="justifyLeft"><i class="fas fa-align-left"></i></button>
+
+                    <button type="button" class="btn" data-element="justifyCenter"><i class="fas fa-align-center"></i></button>
+
+                    <button type="button" class="btn" data-element="justifyRight"><i class="fas fa-align-right"></i></button>
+
+                    <button type="button" class="btn" data-element="insertImage"><i class="fas fa-image"></i></button>
+                </div>
+                <span class="label">Post Content</span>
+            </div>
+        </section>
     </form>
     <!--  PAGE End -->
 
     <?php
-        // Adding Footer
-        include __DIR__ . "/../templates/footer.php"
+    // Adding Footer
+    include __DIR__ . "/../templates/footer.php"
     ?>
 
 </body>
+
 </html>
