@@ -14,6 +14,8 @@ define("TITLE", "SneakShop");
     // Adding general head
     include __DIR__ . "/../templates/starter.php"
     ?>
+    <!-- Special FontAwesome -->
+    <link rel="stylesheet" href="<?= APP_URL ?>assets/styles/libs/fontawesome/css/all.min.css">
 </head>
 
 <body>
@@ -95,6 +97,9 @@ define("TITLE", "SneakShop");
         </section>
 
         <section class="large-desc">
+            <!-- Real editor -->
+            <textarea name="large-desc" id="content" style="display: none;"></textarea>
+
             <div class="editor">
                 <div class="text" contenteditable="true" id="content-editor"></div>
 
@@ -109,15 +114,11 @@ define("TITLE", "SneakShop");
 
                     <button type="button" class="btn" data-element="insertOrderedList"><i class="fas fa-list-ol"></i></button>
 
-                    <button type="button" class="btn" data-element="createLink"><i class="fas fa-link"></i></button>
-
                     <button type="button" class="btn" data-element="justifyLeft"><i class="fas fa-align-left"></i></button>
 
                     <button type="button" class="btn" data-element="justifyCenter"><i class="fas fa-align-center"></i></button>
 
                     <button type="button" class="btn" data-element="justifyRight"><i class="fas fa-align-right"></i></button>
-
-                    <button type="button" class="btn" data-element="insertImage"><i class="fas fa-image"></i></button>
                 </div>
                 <span class="label">Post Content</span>
             </div>
