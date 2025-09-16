@@ -25,24 +25,18 @@ define("TITLE", "SneakShop");
     ?>
 
     <!-- HOME PAGE Start -->
-    <form class="page" method="post">
+    <form class="page" method="post" enctype="multipart/form-data">
         <section class="product">
             <div class="images">
+                <input type="file" name="" id="product-images" multiple style="display: none;">
                 <div class="main-image">
-                    <img loading="lazy" src="<?= APP_URL ?>assets/images/Male-Sneakers.H03.2k.png" alt="">
+                    <img loading="lazy" src="<?= APP_URL ?>assets/images/image.svg" alt="">
+                    <label for="product-images" class="load-btn">Charger les images</label>
                 </div>
 
                 <div class="galery">
                     <div class="item">
-                        <img loading="lazy" src="<?= APP_URL ?>assets/images/Male-Sneakers.H03.2k.png" alt="">
-                    </div>
-
-                    <div class="item">
-                        <img loading="lazy" src="<?= APP_URL ?>assets/images/Male-Sneakers.H03.2k.png" alt="">
-                    </div>
-
-                    <div class="item">
-                        <img loading="lazy" src="<?= APP_URL ?>assets/images/Male-Sneakers.H03.2k.png" alt="">
+                        <img loading="lazy" src="<?= APP_URL ?>assets/images/image.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -57,17 +51,17 @@ define("TITLE", "SneakShop");
                 <label>
                     <!-- <span class="text">Categorie</span> -->
                     <select name="category" id="">
-                        <option class="category" value="">category 1</option>
-                        <option class="category" value="">category 1</option>
-                        <option class="category" value="">category 1</option>
-                        <option class="category" value="">category 1</option>
-                        <option class="category" value="">category 1</option>
+                        <option value="">Category 1</option>
+                        <option value="">Category 2</option>
+                        <option value="">Category 3</option>
+                        <option value="">Category 4</option>
+                        <option value="">Category 5</option>
                     </select>
                 </label>
 
                 <label>
                     <span class="text">Description courte</span>
-                    <textarea name="desc" id="" class="desc" rows="4" placeholder="Description"></textarea>
+                    <textarea name="desc" id="" class="desc" rows="4" placeholder="Description" minlength="30"></textarea>
                 </label>
 
                 <div class="caracteristics">
@@ -77,22 +71,11 @@ define("TITLE", "SneakShop");
                     </label>
 
                     <div class="preview">
-                        <span class="item">Poids: 1.2Kg</span>
+                        <!-- <span class="item">Poids: 1.2Kg</span> -->
                     </div>
                 </div>
 
-                <div class="counter-add-to-cart">
-                    <div class="counter">
-                        <input type="number" disabled name="" id="" min="1" class="number" value="1">
-
-                        <div class="btns">
-                            <div class="item plus"><i class="bx bxs-up-arrow"></i></div>
-                            <div class="item minus"><i class="bx bxs-down-arrow"></i></div>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="cta-btn">Ajouter au panier</button>
-                </div>
+                <button type="submit" class="cta-btn">Mettre en ligne</button>
             </div>
         </section>
 
