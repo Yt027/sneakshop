@@ -27,17 +27,20 @@ section {
 
 
 .product .images .galery {
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
 }
 
 .product .images .galery .item {
-    max-width: 250px;
-    height: 100px;
+    max-width: 100px;
+    width: auto;
+    height: 60px;
+    overflow: hidden;
     background-color: var(--bg-color);
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.175);
-    border-radius: 16px;
+    border-radius: 10px;
     cursor: pointer;
     transition: .25s;
 }

@@ -28,7 +28,7 @@ define("TITLE", "SneakShop");
     <form class="page" method="post" enctype="multipart/form-data">
         <section class="product">
             <div class="images">
-                <input type="file" name="" id="product-images" multiple style="display: none;">
+                <input type="file" name="images[]" id="product-images" multiple style="display: none;">
                 <div class="main-image">
                     <img loading="lazy" src="<?= APP_URL ?>assets/images/image.svg" alt="">
                     <label for="product-images" class="load-btn">Charger les images</label>
@@ -108,6 +108,15 @@ define("TITLE", "SneakShop");
         </section>
     </form>
     <!--  PAGE End -->
+
+
+    <!-- Templates Start -->
+    <template id="templates">
+        <div class="product-galery-item item">
+            <img loading="lazy" src="<?= APP_URL ?>assets/images/image.svg" alt="">
+        </div>
+    </template>
+    <!-- Templates End -->
 
     <?php
     // Adding Footer

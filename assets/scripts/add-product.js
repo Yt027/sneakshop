@@ -1,52 +1,103 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Caracteristics Preview Start
-    const caracteristicPreviewer = document.querySelector(".product .content .caracteristics .preview")
-    document.querySelector("form .content .caracteristics input").addEventListener("input", (e) => {
-        let content = e.target.value
-        let data = content.split("|")
+document.addEventListener('DOMContentLoaded', () => {
+  const Templates = document.getElementById('templates')
 
-        caracteristicPreviewer.innerHTML = ""
-        data.forEach(element => {
-            caracteristicPreviewer.innerHTML += `<span class="item">${element}</span>`      
-        });
+  // Image Upload Start
+  const imageUploader = document.getElementById('product-images')
+  const imagePreviewer = document.querySelector('.product .images .galery')
+
+  imageUploader.addEventListener('change', event => {
+    let files = [...event.target.files]
+
+    imagePreviewer.innerHTML = ''
+    files.forEach((file, id) => {
+      const reader = new FileReader()
+      reader.onload = e => {
+        let src = e.target.result
+
+        // Cloning Galery Item structure
+        let item = Templates.content
+          .querySelector('.product-galery-item')
+          .cloneNode(true)
+        item.querySelector('img').src = src
+
+        // Changing Main Image on item clicks
+        item.onclick = () => {
+          document.querySelector('.main-image img').src = src
+        }
+
+        // Setting Main Image to first galery image
+        if(id === 0) {
+            document.querySelector('.main-image img').src = src
+        }
+
+        imagePreviewer.append(item)
+      }
+      reader.readAsDataURL(file)
     })
-    // Caracteristics Preview End
+  })
+  // Image Upload End
 
-
-    // Large Description Start
-    // Managing post content editor's reactions
-    const postContentEditor = document.getElementById("content-editor");
-    const postContent = document.getElementById("content");
-
-    // Add focus class when the editor is focused
-    postContentEditor.addEventListener('focusin', () => {
-        postContentEditor.classList.add("focus")
+  // Caracteristics Preview Start
+  const caracteristicPreviewer = document.querySelector(
+    '.product .content .caracteristics .preview'
+  )
+  document
+    .querySelector('form .content .caracteristics input')
+    .addEventListener('input', () => {
+      getCaracteristicsFromData()
     })
 
-    // Remove focus class when the editor loses focus or is empty
-    postContentEditor.addEventListener('focusout', () => {
-        if(postContentEditor.innerHTML == "<br>" || postContentEditor.innerHTML == "") postContentEditor.classList.remove("focus");
+  function getCaracteristicsFromData () {
+    let content = document.querySelector(
+      'form .content .caracteristics input'
+    ).value
+    let data = content.split('|')
+
+    caracteristicPreviewer.innerHTML = ''
+    data.forEach(element => {
+      caracteristicPreviewer.innerHTML += `<span class="item">${element}</span>`
     })
+  }
 
-    // Update the hidden textarea with the content of the editor
-    postContentEditor.addEventListener('input', () => {
-        postContent.value = postContentEditor.innerHTML;
-        console.log(postContent.value);
+  getCaracteristicsFromData()
+  // Caracteristics Preview End
+
+  // Large Description Start
+  // Managing post content editor's reactions
+  const postContentEditor = document.getElementById('content-editor')
+  const postContent = document.getElementById('content')
+
+  // Add focus class when the editor is focused
+  postContentEditor.addEventListener('focusin', () => {
+    postContentEditor.classList.add('focus')
+  })
+
+  // Remove focus class when the editor loses focus or is empty
+  postContentEditor.addEventListener('focusout', () => {
+    if (
+      postContentEditor.innerHTML == '<br>' ||
+      postContentEditor.innerHTML == ''
+    )
+      postContentEditor.classList.remove('focus')
+  })
+
+  // Update the hidden textarea with the content of the editor
+  postContentEditor.addEventListener('input', () => {
+    postContent.value = postContentEditor.innerHTML
+    console.log(postContent.value)
+  })
+
+  // Managing tools actions
+  const tools = document.querySelectorAll('form .large-desc .tools .btn')
+
+  // Add event listeners to each tool button
+  tools.forEach(tool => {
+    tool.addEventListener('click', event => {
+      var command = tool.dataset['element']
+
+      // Handle special commands like creating links or inserting images
+      document.execCommand(command, false, null)
     })
-
-
-    // Managing tools actions
-    const tools = document.querySelectorAll('form .large-desc .tools .btn');
-
-    // Add event listeners to each tool button
-    tools.forEach(tool => {
-        tool.addEventListener('click', (event) => {
-            var command = tool.dataset['element'];
-
-            // Handle special commands like creating links or inserting images
-            document.execCommand(command, false, null)
-
-        })
-    })
-    // Large Description End
+  })
+  // Large Description End
 })
