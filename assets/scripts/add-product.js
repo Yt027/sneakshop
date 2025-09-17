@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
   )
   document
     .querySelector('form .content .caracteristics input')
-    .addEventListener('input', () => {
-      getCaracteristicsFromData()
+    .addEventListener('input', (e) => {
+      getCaracteristicsFromData();
     })
 
   function getCaracteristicsFromData () {
