@@ -48,15 +48,20 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
   function getCaracteristicsFromData () {
+    caracteristicPreviewer.innerHTML = ''
+
     let content = document.querySelector(
       'form .content .caracteristics input'
     ).value
-    let data = content.split('|')
 
-    caracteristicPreviewer.innerHTML = ''
-    data.forEach(element => {
-      caracteristicPreviewer.innerHTML += `<span class="item">${element}</span>`
-    })
+    // Extract Data only when the Div is empty
+    if(!content.length == 0) {
+        let data = content.split('|')
+    
+        data.forEach(element => {
+          caracteristicPreviewer.innerHTML += `<span class="item">${element}</span>`
+        })
+    }
   }
 
   getCaracteristicsFromData()

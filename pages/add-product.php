@@ -103,7 +103,7 @@ define("TITLE", "SneakShop");
 
                     <button type="button" class="btn" data-element="justifyRight"><i class="fas fa-align-right"></i></button>
                 </div>
-                <span class="label">Post Content</span>
+                <span class="label">Description longue</span>
             </div>
         </section>
     </form>
