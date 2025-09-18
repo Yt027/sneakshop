@@ -26,6 +26,8 @@ define("TITLE", "SneakShop");
             <div class="images">
                 <div class="main-image">
                     <img loading="lazy" src="<?=APP_URL?>assets/images/Male-Sneakers.H03.2k.png" alt="">
+                    <img loading="lazy" src="<?=APP_URL?>assets/images/Male-Sneakers.H03.2k.png" alt="">
+                    <img loading="lazy" src="<?=APP_URL?>assets/images/Male-Sneakers.H03.2k.png" alt="">
                 </div>
 
                 <div class="galery">

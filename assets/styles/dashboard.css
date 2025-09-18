@@ -90,7 +90,7 @@
     align-items: center;
     flex-direction: row-reverse;
     
-    background-color: var(--main-color);
+    background-color: var(--color);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
     color: var(--bg-color);
     font-size: 1.05rem;
@@ -104,6 +104,7 @@
 }
 .sidebar.reduced .links .item {
     border-radius: 6px;
+    background-color: var(--main-color);
 }
 
 .sidebar.reduced .links .item .text {

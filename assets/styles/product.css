@@ -14,11 +14,15 @@ section {
     width: 50%;
 }
 
-/* .product .images .main-image {
-    background-color: red;
-} */
+.product .images .main-image {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
 
 .product .images .main-image img {
+    scroll-snap-align: center;
+    flex: 0 0 100%;
     width: 100%;
     max-width: 100%;
     object-fit: contain;
