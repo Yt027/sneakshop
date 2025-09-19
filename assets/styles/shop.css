@@ -1,7 +1,7 @@
 /* General Styles Start */
-section {
+/* section {
     padding: 40px;
-}
+} */
 /* General Styles End */
 
 /* Hero Section Start */
@@ -32,10 +32,12 @@ section {
 }
 
 .hero h1 {
+    text-align: center;
     font-size: 3.5rem;
     font-weight: 900;
     font-style: italic;
-    line-height: 3;
+    line-height: 1.2;
+    margin-bottom: 30px;
     color: var(--bg-color);
 }
 /* Hero Section End */
