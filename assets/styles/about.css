@@ -24,12 +24,4 @@
     background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
     z-index: -1;
 }
-
-.hero h1 {
-    font-size: 3.5rem;
-    font-weight: 900;
-    font-style: italic;
-    line-height: 3;
-    color: var(--bg-color);
-}
 /* Hero Section End */

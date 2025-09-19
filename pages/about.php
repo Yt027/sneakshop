@@ -23,7 +23,7 @@ define("TITLE", "SneakShop");
     <!-- HOME PAGE Start -->
     <main class="page">
         <section class="hero">
-            <h1></span class="sitename">Qui sommes nous ?</h1>
+            <h1 class="hero-title"></span class="sitename">Qui sommes nous ?</h1>
         </section>
     </main>
     <!--  PAGE End -->
