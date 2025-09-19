@@ -1,6 +1,6 @@
 <!-- Footer Start -->
 <footer class="footer">
-    <h2 class="sitename"><?= APP_NAME ?></h2>
+    <a href="<?=APP_URL?>" class="sitename"><?= APP_NAME ?></a>
 
     <div class="left">
         <nav class="wrapper links">

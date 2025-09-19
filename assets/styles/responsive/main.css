@@ -5,6 +5,33 @@
         line-height: 1.58;
     }
 }
+
+
+
+@media screen and (max-width: 800px) {
+    section {
+        padding: 30px;
+    }
+}
+
+
+@media screen and (max-width: 620px) {
+    section {
+        padding: 20px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+
+@media screen and (max-width: 430px) {
+    .section-title {
+        font-size: 2rem;
+        line-height: .95;
+    }
+}
 /* General Stuff End */
 
 /* CTA Button Start */
@@ -114,3 +141,17 @@
     }
 }
 /* Header End */
+
+
+/* Footer Start */
+@media screen and (max-width: 1142px) {
+    .footer .right {
+        flex: 0 0 100%
+    }
+
+    .footer .right .cta {
+        padding-left: 0;
+        padding-top: 20px;
+    }
+}
+/* Footer End */

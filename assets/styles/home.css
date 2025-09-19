@@ -1,5 +1,4 @@
 section {
-    padding: 40px;
     height: calc(100vh - 85px);
 }
 
@@ -83,23 +82,6 @@ section {
 /* Value Sction End */
 
 /* Partner Section Start */
-.section-title {
-    font-size: 3rem;
-    line-height: 0.5;
-    font-weight: 700;
-    font-style: italic;
-    text-align: center;
-    filter: opacity(.8);
-    letter-spacing: -1px;
-    margin-bottom: 2rem;
-    color: var(--primary-color);
-}
-
-.section-subtitle {
-    max-width: 420px;
-    margin: 0 auto;
-}
-
 .partner {
     margin: 100px 0px 0px;
     width: 100%;
