@@ -218,6 +218,7 @@ a {
 }
 .cta-btn.inactive.rail:hover {
     background-color: var(--bg-color);
+    color: var(--bg-color);
 }
 
 .cta-btn.rail::before {
@@ -228,7 +229,7 @@ a {
     left: 0;
     height: 100%;
     width: 0;
-    background-color: #fff;
+    background-color: var(--bg-color);
     border-radius: inherit;
     transition: .3s;
 }
@@ -236,8 +237,8 @@ a {
     width: 100%;
 }
 
-.cta-btn.inactive.rail::before {
-    background-color: var(--primary-color);
+.cta-btn.rail.inactive::before {
+    background-color: var(--primary-color) !important;
 }
 /* CTA Button End */
 
