@@ -23,7 +23,7 @@ define("TITLE", "Boutique | SneakShop");
     <!-- HOME PAGE Start -->
     <main class="page">
         <section class="hero">
-            <h1></span class="sitename"><?=APP_NAME?></span> tout pour bouger</h1>
+            <h1 class="hero-title"></span class="sitename"><?=APP_NAME?></span> tout pour bouger</h1>
             <form class="search-product" method="post">
                 <input type="search" name="product-name" class="box" id="" placeholder="Chercher">
                 <button type="submit" class="btn"><i class="bx bx-search-alt-2 icon"></i></button>

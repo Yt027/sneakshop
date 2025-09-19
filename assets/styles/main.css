@@ -39,7 +39,17 @@ a {
     text-decoration: none;
 }
 
-/* Section Headings */
+/* Headings */
+.hero-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    color: var(--bg-color);
+}
+
 .section-title {
     font-size: 3rem;
     line-height: 0.5;
