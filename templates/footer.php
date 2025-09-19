@@ -36,15 +36,15 @@
 
     <div class="right">
         <div class="cta">
-            <div class="cta-btn rail">
+            <a href="<?=APP_URL?>contact" class="cta-btn rail inactive">
                 <span class="text">Contactez Nous</span>
                 <i class="bx bxl-whatsapp icon"></i>
-            </div>
+            </a>
 
-            <div class="cta-btn rail">
+            <a href="<?=APP_URL?>signin" class="cta-btn rail">
                 <span class="text">Rejoindre l'aventure</span>
                 <i class="bx bxs-group icon"></i>
-            </div>
+            </a>
         </div>
     </div>
 
