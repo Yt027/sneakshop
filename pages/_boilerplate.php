@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . "/../configs/main.php";
+//
 // Page configs
 define("PAGE", "pageName");
 define("TITLE", "SneakShop");

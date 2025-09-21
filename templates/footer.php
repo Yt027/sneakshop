@@ -4,16 +4,16 @@
 
     <div class="left">
         <nav class="wrapper links">
-            <a href="<?= APP_URL ?>shop/" class="link">Chaussures Homme</a>
-            <a href="<?= APP_URL ?>shop/" class="link">Chaussures Femme</a>
-            <a href="<?= APP_URL ?>shop/" class="link">Tendances</a>
-            <a href="<?= APP_URL ?>shop/" class="link">Nouveautés</a>
+            <a href="<?= APP_URL ?>shop" class="link">Chaussures Homme</a>
+            <a href="<?= APP_URL ?>shop" class="link">Chaussures Femme</a>
+            <a href="<?= APP_URL ?>shop" class="link">Tendances</a>
+            <a href="<?= APP_URL ?>shop" class="link">Nouveautés</a>
         </nav>
 
         <nav class="wrapper links">
-            <a href="<?= APP_URL ?>shop/" class="link">Boutique</a>
-            <a href="<?= APP_URL ?>about/" class="link">A propos</a>
-            <a href="<?= APP_URL ?>contact/" class="link">Contact</a>
+            <a href="<?= APP_URL ?>shop" class="link">Boutique</a>
+            <a href="<?= APP_URL ?>about" class="link">A propos</a>
+            <a href="<?= APP_URL ?>contact" class="link">Contact</a>
         </nav>
 
         <address class="wrapper address">
