@@ -29,6 +29,10 @@ body {
     margin: 0 auto;
 }
 
+section {
+    padding: 40px;
+}
+
 p {
     color: var(--color);
     font-size: 1.025rem;
@@ -245,7 +249,7 @@ a {
 /* Product Cards Start*/
 .product-container {
     display: flex;
-    /* justify-content: space-between; */
+    /* justify-content: center; */
     gap: 80px 30px;
     flex-wrap: wrap;
 }

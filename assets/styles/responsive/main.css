@@ -151,6 +151,16 @@
 /* Header End */
 
 
+/* Product Cards Start */
+@media screen and (max-width: 640px) {
+    .product-container {
+        justify-content: center;
+        gap: 40px 20px;
+    }
+}
+/* Product Cards End */
+
+
 /* Footer Start */
 @media screen and (max-width: 1142px) {
     .footer .right {
