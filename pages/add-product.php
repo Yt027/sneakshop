@@ -3,6 +3,9 @@
 // Page configs
 define("PAGE", "add-product");
 define("TITLE", "SneakShop");
+
+// Form controler
+require __DIR__ . "/../controls/add-product.php";
 ?>
 
 
@@ -28,7 +31,7 @@ define("TITLE", "SneakShop");
     <form class="page" method="post" enctype="multipart/form-data">
         <section class="product">
             <div class="images">
-                <input type="file" name="images[]" id="product-images" multiple style="display: none;">
+                <input type="file" name="images[]" id="product-images" multiple style="display: none;" required aria-required="true">
                 <div class="main-image">
                     <img loading="lazy" src="<?= APP_URL ?>assets/images/image.svg" alt="">
                     <label for="product-images" class="load-btn">Charger les images</label>
@@ -51,17 +54,22 @@ define("TITLE", "SneakShop");
                 <label>
                     <!-- <span class="text">Categorie</span> -->
                     <select name="category" id="">
-                        <option value="">Category 1</option>
-                        <option value="">Category 2</option>
-                        <option value="">Category 3</option>
-                        <option value="">Category 4</option>
-                        <option value="">Category 5</option>
+                        <option value="c1">Category 1</option>
+                        <option value="c2">Category 2</option>
+                        <option value="c3">Category 3</option>
+                        <option value="c4">Category 4</option>
+                        <option value="c5">Category 5</option>
                     </select>
                 </label>
 
                 <label>
+                    <span class="text">Prix</span>
+                    <input class="price" type="number" name="price" id="" placeholder="Prix" required aria-required="true" step="0.01">
+                </label>
+
+                <label>
                     <span class="text">Description courte</span>
-                    <textarea name="desc" id="" class="desc" rows="4" placeholder="Description" minlength="30"></textarea>
+                                        <textarea name="description" id="" class="desc" rows="4" placeholder="Description" minlength="30"></textarea>
                 </label>
 
                 <div class="caracteristics">
