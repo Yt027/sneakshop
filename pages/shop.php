@@ -3,6 +3,12 @@
 // Page configs
 define("PAGE", "shop");
 define("TITLE", "Boutique | SneakShop");
+
+// Loading Database
+require_once __DIR__ . "/../models/products.php";
+$productsModel = new Products($connection);
+$products = $productsModel->getAllProducts();
+var_dump($products);
 ?>
 
 
