@@ -64,12 +64,17 @@ require __DIR__ . "/../controls/add-product.php";
 
                 <label>
                     <span class="text">Prix</span>
-                    <input class="price" type="number" name="price" id="" placeholder="Prix" required aria-required="true" step="0.01">
+                    <input max="1000000" min="100" class="price" type="number" name="price" id="" placeholder="Prix" required aria-required="true" step="0.01">
+                </label>
+
+                <label>
+                    <span class="text">Quantité en stock</span>
+                    <input max="1000000" min="1" class="stock" type="number" name="stock" id="" placeholder="Stock" required aria-required="true" step="1">
                 </label>
 
                 <label>
                     <span class="text">Description courte</span>
-                                        <textarea name="description" id="" class="desc" rows="4" placeholder="Description" minlength="30"></textarea>
+                    <textarea name="description" id="" class="desc" rows="4" placeholder="Description" minlength="30"></textarea>
                 </label>
 
                 <div class="caracteristics">

@@ -34,14 +34,15 @@ class Products {
         return $stmt->fetchAll();
     }
 
-    public function addProduct($name, $category, $price, $description, $large_desc, $caracteristics)
+    public function addProduct($name, $category, $price, $stock, $description, $large_desc, $caracteristics)
     {
-        $query = "INSERT INTO products (name, category, price, description, large_description, caracteristics) VALUES (:name, :category, :price, :description, :large_desc, :caracteristics)";
+        $query = "INSERT INTO products (name, category, price, stock, description, large_description, caracteristics, notation) VALUES (:name, :category, :price, :stock, :description, :large_desc, :caracteristics, 0)";
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':category', $category);
         $stmt->bindParam(':price', $price);
+        $stmt->bindParam(':stock', $stock);
         $stmt->bindParam(':description', $description);
         $stmt->bindParam(':large_desc', $large_desc);
         $stmt->bindParam(':caracteristics', $caracteristics);

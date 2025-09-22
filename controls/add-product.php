@@ -11,6 +11,7 @@ if (isset($_POST) && !empty($_POST)) {
     $name = htmlspecialchars(trim($_POST['name']));
     $category = htmlspecialchars(trim($_POST['category']));
     $price = floatval($_POST['price']);
+    $stock = intval($_POST['stock']);
     $description = htmlspecialchars(trim($_POST['description']));
     $large_desc = isset($_POST['large-desc']) ? htmlspecialchars(trim($_POST['large-desc'])) : '';
     $caracteristics_str = isset($_POST['caracteristics']) ? trim($_POST['caracteristics']) : '';
@@ -24,13 +25,17 @@ if (isset($_POST) && !empty($_POST)) {
                 $key = trim($kv[0]);
                 $value = trim($kv[1]);
                 $caracteristics_arr[$key] = $value;
+            } else {
+                // Handle malformed pair by ignoring or logging
+                // Here we choose to just add the trimmed pair as a value with numeric key
+                $caracteristics_arr[] = trim($pair);
             }
         }
         $caracteristics_json = json_encode($caracteristics_arr);
     }
 
     // Insert product data (without images)
-    $productId = $productsModel->addProduct($name, $category, $price, $description, $large_desc, $caracteristics_json);
+    $productId = $productsModel->addProduct($name, $category, $price, $stock, $description, $large_desc, $caracteristics_json);
 
     if ($productId) {
         // Handle file uploads
