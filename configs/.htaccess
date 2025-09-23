@@ -1,0 +1,5 @@
+# Deny all direct access
+<Files ".ht*">
+    Require all denied
+</Files>
+Require all denied
