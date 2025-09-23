@@ -5,6 +5,17 @@ require "configs/main.php";
 $request = $_SERVER['REQUEST_URI'];
 $request = parse_url($request, PHP_URL_PATH);
 
+// Remove trailing slash if not the root path
+if (strlen($request) > 1 && substr($request, -1) === '/') {
+    $request = rtrim($request, '/');
+}
+
+// If the request is the base path without a trailing slash, redirect to the one with a slash
+// to have a canonical URL for the home page.
+if ($request === '/' . APP_name) {
+    $request = '/' . APP_name . '/';
+}
+
 $routes = [
     '/' . APP_name . '/' => 'home',
     '/' . APP_name . '/home' => 'home',
