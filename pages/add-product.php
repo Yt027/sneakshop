@@ -15,7 +15,7 @@ require __DIR__ . "/../controls/add-product.php";
 <head>
     <?php
     // Adding general head
-    include __DIR__ . "/../templates/starter.php"
+    include __DIR__ . "/../templates/starter.php";
     ?>
     <!-- Special FontAwesome -->
     <link rel="stylesheet" href="<?= APP_URL ?>assets/styles/libs/fontawesome/css/all.min.css">

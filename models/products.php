@@ -1,8 +1,4 @@
 <?php
-require_once __DIR__ . "/../configs/database.php";
-$db = new Database();
-$connection = $db->connect();
-
 class Products {
     private $conn;
 
@@ -36,7 +32,7 @@ class Products {
 
     public function addProduct($name, $category, $price, $stock, $description, $large_desc, $caracteristics)
     {
-        $query = "INSERT INTO products (name, category, price, stock, description, large_description, caracteristics, notation) VALUES (:name, :category, :price, :stock, :description, :large_desc, :caracteristics, 0)";
+        $query = "INSERT INTO products (name, category, price, stock, description, large_description, caracteristics, notation) VALUES (:name, :category, :price, :stock, :description, :large_desc, :caracteristics, 1)";
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(':name', $name);

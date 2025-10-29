@@ -1,10 +1,14 @@
 <?php
+
+require_once __DIR__ . "/../configs/database.php";
 require_once __DIR__ . "/../models/products.php";
 
 // The Products class needs the database connection, which is created in database.php
 // and should be available. Let's assume $db is available from including a config file
 // in the page that includes this script.
-$productsModel = new Products($db->connect());
+$db = new Database();
+$connection = $db->connect();
+$productsModel = new Products($connection);
 
 if (isset($_POST) && !empty($_POST)) {
     // Validate and sanitize inputs

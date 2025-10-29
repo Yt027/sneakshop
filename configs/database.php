@@ -16,7 +16,7 @@ class Database {
         $this->name = $_ENV['DB_NAME'];
         $this->user = $_ENV['DB_USER'];
         $this->pass = $_ENV['DB_PASS'];
-        $this->charset = 'utf8mb4';
+        $this->charset = 'utf8';
     }
 
     public function connect() {
