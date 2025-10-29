@@ -5,11 +5,8 @@ define("PAGE", "shop");
 define("TITLE", "Boutique | SneakShop");
 
 // Loading Database
-require_once __DIR__ . "/../configs/database.php";
 require_once __DIR__ . "/../models/products.php";
-$db = new Database();
-$connection = $db->connect();
-$productsModel = new Products($connection);
+$productsModel = new Products();
 $products = $productsModel->getAllProducts();
 var_dump($products);
 ?>
