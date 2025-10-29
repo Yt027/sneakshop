@@ -13,7 +13,11 @@ if (isset($_POST) && !empty($_POST)) {
     $price = floatval($_POST['price']);
     $stock = intval($_POST['stock']);
     $description = htmlspecialchars(trim($_POST['description']));
-    $large_desc = isset($_POST['large-desc']) ? htmlspecialchars(trim($_POST['large-desc'])) : '';
+
+    $large_desc = isset($_POST['large-desc']) ? $_POST['large-desc'] : '';
+    $allowed_tags = '<p><b><i><u><strong><em><ul><ol><li><br><span><div><h1><h2><h3><h4><h5><h6><blockquote>';
+    $large_desc = strip_tags($large_desc, $allowed_tags);
+    
     $caracteristics_str = isset($_POST['caracteristics']) ? trim($_POST['caracteristics']) : '';
     $caracteristics_json = '';
     if (!empty($caracteristics_str)) {
@@ -65,23 +69,9 @@ if (isset($_POST) && !empty($_POST)) {
             }
         }
 
-        // For demonstration, we'll just print the data. In a real app, you'd redirect.
-        echo "<pre>";
-        print_r([
-            'status' => 'success',
-            'productId' => $productId,
-            'name' => $name,
-            'category' => $category,
-            'price' => $price,
-            'description' => $description,
-            'large_desc' => $large_desc,
-            'caracteristics' => $caracteristics_json,
-            'images' => $uploadedImages
-        ]);
-        echo "</pre>";
-        // Example of a real-world redirect:
-        // header("Location: /product.php?id=" . $productId);
-        // exit();
+    
+        header("Location: " . APP_URL . "product?target=" . $productId);
+        exit();
     } else {
         // Handle insertion error
         echo "Error adding product.";

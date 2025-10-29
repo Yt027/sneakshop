@@ -93,9 +93,8 @@ section {
 
 .product .content .caracteristics {
     margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
     gap: 14px 24px;
 }
 
@@ -114,5 +113,11 @@ section {
 
 .large-desc {
     max-width: 600px;
+    list-style: inside;
+}
+
+.large-desc ul,
+.large-desc ol {
+    margin-left: 10px;
 }
 /* Product Section End */

@@ -2,7 +2,7 @@
 //
 // Page configs
 define("PAGE", "product");
-define("TITLE", "SneakShop");
+// define("TITLE", "SneakShop"); See controls/product.php
 
 // Product controller
 require_once __DIR__ . "/../controls/product.php";
@@ -29,14 +29,14 @@ require_once __DIR__ . "/../controls/product.php";
             <div class="images">
                 <div class="main-image">
                     <?php foreach ($productImages as $image) : ?>
-                        <img loading="lazy" src="<?= htmlspecialchars($image) ?>" alt="Image du produit">
+                        <img loading="lazy" src="<?= htmlspecialchars($image) ?>" alt="<?=$product["name"]?>">
                     <?php endforeach; ?>
                 </div>
 
                 <div class="galery">
                     <?php foreach ($productImages as $image) : ?>
                         <div class="item">
-                            <img loading="lazy" src="<?= htmlspecialchars($image) ?>" alt="Miniature du produit">
+                            <img loading="lazy" src="<?= htmlspecialchars($image) ?>" alt="<?=$product["name"]?>">
                         </div>
                     <?php endforeach; ?>
                 </div>

@@ -165,6 +165,12 @@ form .large-desc {
     display: flex;
     max-width: 900px;
     margin: 0px auto;
+    list-style: inside;
+}
+
+form .large-desc ul,
+form .large-desc ol {
+    margin-left: 10px;
 }
 
 form .editor .label{
