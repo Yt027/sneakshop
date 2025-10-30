@@ -38,7 +38,7 @@ var_dump($products);
 
         <section class="product">
             <div class="product-container">
-                <div class="product-card">
+                <div class="product-card" data-id="1">
                     <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
                     <div class="content">
                         <div class="top">
@@ -47,55 +47,9 @@ var_dump($products);
                         </div>
                         <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
                     </div>
-                </div>
-                <div class="product-card">
-                    <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
-                    <div class="content">
-                        <div class="top">
-                            <h3 class="name">Nike Air Max 270 React</h3>
-                            <span class="price">75 000 FCFA</span>
-                        </div>
-                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
-                    <div class="content">
-                        <div class="top">
-                            <h3 class="name">Nike Air Max 270 React</h3>
-                            <span class="price">75 000 FCFA</span>
-                        </div>
-                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
-                    <div class="content">
-                        <div class="top">
-                            <h3 class="name">Nike Air Max 270 React</h3>
-                            <span class="price">75 000 FCFA</span>
-                        </div>
-                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
-                    <div class="content">
-                        <div class="top">
-                            <h3 class="name">Nike Air Max 270 React</h3>
-                            <span class="price">75 000 FCFA</span>
-                        </div>
-                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
-                    <div class="content">
-                        <div class="top">
-                            <h3 class="name">Nike Air Max 270 React</h3>
-                            <span class="price">75 000 FCFA</span>
-                        </div>
-                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+
+                    <div class="ban">
+                        <button class="add-to-cart" title="Ajouter au panier"><span class="bx bx-cart"></span></button>
                     </div>
                 </div>
             </div>

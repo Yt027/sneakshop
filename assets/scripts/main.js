@@ -51,4 +51,34 @@ document.addEventListener("DOMContentLoaded",() => {
         })
     })
     // Form Password Input End
+
+    // Product Card Add to Cart Button Start
+    document.querySelectorAll(".product-card").forEach(card => {
+        cartBtn = card.querySelector(".add-to-cart");
+        cartBtn.addEventListener("click", () => {
+            let isCarted = card.className.includes("carted");
+            let request = {
+                "id": card.dataset["id"],
+                "qty": 1,
+                "origin": "shop"
+            }
+
+            fetch("./controls/add-to-cart.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(request).toString()
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.inCart) {
+                    card.classList.add("carted");
+                    cartBtn.setAttribute("title", "Supprimer panier");
+                } else {
+                    card.classList.remove("carted");
+                    cartBtn.setAttribute("title", "Ajouter au panier");
+                }
+            });
+        })
+    })
+    // Product Card Add to Cart Button End
 })
