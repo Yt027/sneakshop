@@ -37,7 +37,7 @@ var_dump($products);
         </section>
 
         <section class="product">
-            <div class="product-container">
+            <div class="product-container shop">
                 <div class="product-card" data-id="1">
                     <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
                     <div class="content">
