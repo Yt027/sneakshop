@@ -56,9 +56,12 @@ require_once __DIR__ . "/../controls/cart.php";
             </div>
 
             <div class="wrapper">
-                <div class="item">
+                <?php
+                    echo $data["products"]
+                ?>
+                <!-- <div class="item">
                     <div class="image">
-                        <img src="./assets/images/Shoes-White.H03.2k.png" alt="">
+                        <img src="<?=APP_URL?>assets/images/Shoes-White.H03.2k.png" alt="">
                     </div>
 
                     <div class="content">
@@ -76,7 +79,7 @@ require_once __DIR__ . "/../controls/cart.php";
                         </div>
 
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
