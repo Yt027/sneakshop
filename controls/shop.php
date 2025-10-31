@@ -3,8 +3,14 @@
 require_once __DIR__ . "/../models/products.php";
 $productsModel = new Products();
 $products = $productsModel->getAllProducts();
-// var_dump($products);
 
+// Loading carted products
+if(!isset($_SESSION)) {
+    session_start();
+}
+
+$cart = json_decode($_SESSION["cart"] ?? '[]', true);
+var_dump($cart);
 $data = [
     "products" => ""
 ];
@@ -16,6 +22,7 @@ foreach ($products as $key => $product) {
     $description = $product["description"];
     $id = $product["id"];
     $link = APP_URL . "product?target=$id";
+    $isCarted = isset($cart[$id]) ? "carted" : "";
     $productImage = ""; // Image par défaut
 
     // Chargement des images du produit
@@ -32,7 +39,7 @@ foreach ($products as $key => $product) {
     }
 
     $data["products"] .= "
-        <div class='product-card' data-id='$id'>
+        <div class='product-card $isCarted' data-id='$id'>
             <div class='image'>
                 <img src='$productImage' alt='' loading='lazy'>
             </div>
