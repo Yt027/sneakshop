@@ -14,6 +14,7 @@ foreach ($products as $key => $product) {
     $name = $product["name"];
     $price = $product["price"];
     $description = $product["description"];
+    $link = APP_URL . "product?target=" . $product["id"] . "' class='product-card' data-id='" . $product['id'];
     $productImage = ""; // Image par défaut
 
     // Chargement des images du produit
@@ -30,20 +31,24 @@ foreach ($products as $key => $product) {
     }
 
     $data["products"] .= "
-        <a target='_blank' href='" . APP_URL . "product?target=" . $product["id"] . "' class='product-card' data-id='" . $product['id'] . "'>
-            <img src='$productImage' alt='' loading='lazy'>
+        <div class='product-card'>
+            <div class='image'>
+                <img src='$productImage' alt='' loading='lazy'>
+            </div>
             <div class='content'>
                 <div class='top'>
                     <h3 class='name'>$name</h3>
                     <span class='price'>$price FCFA</span>
                 </div>
                 <p class='desc'>$description</p>
+
+                <a target='_blank' class='cta-btn small rail' href='$link'>Visiter</a>
             </div>
 
             <div class='ban'>
                 <button class='add-to-cart' title='Ajouter au panier'><span class='bx bx-cart'></span></button>
             </div>
-        </a>
+        </div>
     ";
 }
 // printf($data["products"]);
