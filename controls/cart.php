@@ -45,7 +45,7 @@ foreach ($productList as $id => $details) {
                 <div class='content'>
                     <h2 class='name'>$name</h2>
                     <p class='category'>$category</p>
-                    <p class='price'>$rice F CFA
+                    <p class='price'>$price F CFA
                     
                     <div class='cart-counter'>
                         <input type='number' name='' id='' min='1' class='number' value='$qty'>
