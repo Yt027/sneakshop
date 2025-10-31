@@ -267,6 +267,7 @@ a {
     border-radius: 16px;
     cursor: pointer;
     transition: 250ms;
+    overflow: hidden;
 }
 .product-container .product-card:hover {
     box-shadow: 1px 5px 15px -1px rgba(0, 0, 0, .1);
@@ -324,7 +325,10 @@ a {
 }
 
 .product-container .product-card .ban .add-to-cart {
-    padding: 10px;
+    z-index: 5;
+    width: 30px;
+    height: 30px;
+
     border-radius: 24px;
     background-color: var(--bg-color);
     color: var(--main-color);

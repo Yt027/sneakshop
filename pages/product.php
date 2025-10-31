@@ -73,7 +73,7 @@ require_once __DIR__ . "/../controls/product.php";
                         </div>
                     </div>
 
-                    <button type="submit" class="cta-btn">Ajouter au panier</button>
+                    <button type="submit" class="cta-btn add-to-cart">Ajouter au panier</button>
                 </form>
             </div>
         </section>

@@ -4,11 +4,8 @@
 define("PAGE", "shop");
 define("TITLE", "Boutique | SneakShop");
 
-// Loading Database
-require_once __DIR__ . "/../models/products.php";
-$productsModel = new Products();
-$products = $productsModel->getAllProducts();
-var_dump($products);
+// Loading Controller
+require_once __DIR__ . "/../controls/shop.php";
 ?>
 
 
@@ -38,7 +35,10 @@ var_dump($products);
 
         <section class="product">
             <div class="product-container shop">
-                <div class="product-card" data-id="1">
+                <?php 
+                    echo $data["products"];
+                ?>
+                <!-- <div class="product-card" data-id="1">
                     <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
                     <div class="content">
                         <div class="top">
@@ -51,7 +51,7 @@ var_dump($products);
                     <div class="ban">
                         <button class="add-to-cart" title="Ajouter au panier"><span class="bx bx-cart"></span></button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>

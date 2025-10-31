@@ -55,14 +55,16 @@ document.addEventListener("DOMContentLoaded",() => {
     // Product Card Add to Cart Button Start
     document.querySelectorAll(".product-card").forEach(card => {
         const container = card.parentElement
+        const origin = container.className.includes("shop") ? "shop" : 
+                        container.className.includes("product") ? "product" : "cart"
+
         cartBtn = card.querySelector(".add-to-cart");
         cartBtn.addEventListener("click", () => {
             let isCarted = card.className.includes("carted");
             let request = {
                 "id": card.dataset["id"],
                 "qty": 1,
-                "origin": container.className.includes("shop") ? "shop" : 
-                        container.className.includes("product") ? "product" : "cart"
+                "origin": origin
             }
 
             fetch("./controls/add-to-cart.php", {
