@@ -3,6 +3,9 @@
 // Page configs
 define("PAGE", "cart");
 define("TITLE", "Panier | SneakShop");
+
+// Page controller
+require_once __DIR__ . "/../controls/cart.php";
 ?>
 
 

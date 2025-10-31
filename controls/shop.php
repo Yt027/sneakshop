@@ -14,11 +14,12 @@ foreach ($products as $key => $product) {
     $name = $product["name"];
     $price = $product["price"];
     $description = $product["description"];
-    $link = APP_URL . "product?target=" . $product["id"] . "' class='product-card' data-id='" . $product['id'];
+    $id = $product["id"];
+    $link = APP_URL . "product?target=$id";
     $productImage = ""; // Image par défaut
 
     // Chargement des images du produit
-    $directoryPath = "uploads/products/p-" . $product['id']; // Utilisez l'ID du produit pour plus de fiabilité
+    $directoryPath = "uploads/products/p-$id"; // Utilisez l'ID du produit pour plus de fiabilité
     if (is_dir($directoryPath)) {
         $files = scandir($directoryPath);
         $images = array_diff($files, ['..', '.']);
@@ -31,7 +32,7 @@ foreach ($products as $key => $product) {
     }
 
     $data["products"] .= "
-        <div class='product-card'>
+        <div class='product-card' data-id='$id'>
             <div class='image'>
                 <img src='$productImage' alt='' loading='lazy'>
             </div>
