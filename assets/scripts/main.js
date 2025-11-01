@@ -46,43 +46,30 @@ document.addEventListener("DOMContentLoaded",() => {
     document.querySelectorAll("form.default .password-conf").forEach(confirmator => {
         let target = document.querySelector(confirmator.dataset["target"])
 
-        confirmator;addEventListener("input", () => {
+        confirmator.addEventListener("input", () => {
             confirmator.classList.toggle("valid", confirmator.value == target.value)
         })
     })
     // Form Password Input End
-
-    // Product Card Add to Cart Button Start
-    document.querySelectorAll(".product-card").forEach(card => {
-        const container = card.parentElement
-        const origin = container.className.includes("shop") ? "shop" : 
-                        container.className.includes("product") ? "product" : "cart"
-
-        cartBtn = card.querySelector(".add-to-cart");
-        cartBtn.addEventListener("click", () => {
-            let isCarted = card.className.includes("carted");
-            let request = {
-                "id": card.dataset["id"],
-                "qty": 1,
-                "origin": origin
-            }
-
-            fetch("./controls/add-to-cart.php", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(request).toString()
-            })
-            .then(res => res.json())
-            .then(data => {
-                if(data.inCart) {
-                    card.classList.add("carted");
-                    cartBtn.setAttribute("title", "Supprimer panier");
-                } else {
-                    card.classList.remove("carted");
-                    cartBtn.setAttribute("title", "Ajouter au panier");
-                }
-            });
-        })
-    })
-    // Product Card Add to Cart Button End
 })
+
+// Add to cart API requests Start
+async function addToCart(origin, id, qty) {
+    let request = {
+        "id": id,
+        "qty": qty,
+        "origin": origin
+    }
+
+    return fetch("./controls/add-to-cart.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(request).toString()
+    })
+    .then(res => res.json())
+    .then(data => {            
+        return data;
+    })
+    .catch(err => {return err})
+}
+// Add to cart API requests End

@@ -21,6 +21,7 @@ foreach ($productList as $id => $details) {
         $name = $product["name"];
         $price = $product["price"];
         $category = $product["category"];
+        $link = APP_URL . "product?target=$id";
         $productImage = ""; // Image par défaut
 
         // Chargement des images du produit
@@ -54,6 +55,11 @@ foreach ($productList as $id => $details) {
                             <div class='btn plus'><i class='bx bxs-up-arrow'></i></div>
                             <div class='btn minus'><i class='bx bxs-down-arrow'></i></div>
                         </div>
+                    </div>
+
+                    <div class='cta'>
+                        <a target='_blank' href='$link' class='cta-btn small rail'>Visiter</a>
+                        <button type='button' class='remove-from-cart'><i class='bx bx-trash'></i></button>
                     </div>
                 </div>
             </div>
