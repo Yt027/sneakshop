@@ -13,6 +13,7 @@ $data = [
 ];
 
 $productList = json_decode($_SESSION["cart"]) ?? [];
+
 foreach ($productList as $id => $details) {
     $qty = $details->qty;
     $product = $productsModel->getProductById($id);
@@ -38,7 +39,7 @@ foreach ($productList as $id => $details) {
         }
 
         $data["products"] .= "
-            <div class='item'>
+            <div class='item' data-key='$id'>
                 <div class='image'>
                     <img src='$productImage' alt=''>
                 </div>

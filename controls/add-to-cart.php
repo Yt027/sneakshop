@@ -10,8 +10,9 @@ if (!isset($_SESSION)) {
 }
 
 $cart = json_decode($_SESSION["cart"] ?? "[]", true);
+$productId = intval($_POST["id"]);
+$qty = intval($_POST["qty"]);
 if ($_POST["origin"] === "shop") {
-    $productId = intval($_POST["id"]);
     if (isset($cart[$productId])) {
         unset($cart[$productId]);
         echo json_encode(["success" => true, "inCart" => false, "removed" => $productId]);
@@ -19,7 +20,15 @@ if ($_POST["origin"] === "shop") {
         $cart[$productId] = ["qty" => 1];
         echo json_encode(["success" => true, "inCart" => true, "added" => $productId]);
     }
-    $_SESSION["cart"] = json_encode($cart);
+} else if($_POST["origin"] === "cart") {
+    if(!$_POST["qty"] == 0) {
+        $cart[$productId] = ["qty" => $qty];
+        echo json_encode(["inCart" => [$productId, $qty]]);
+    } else {
+        unset($cart[$productId]);
+        echo json_encode(["outCart" => $productId]);
+    }
 } else {
     echo json_encode(["error" => "Unknown action"]);
 }
+$_SESSION["cart"] = json_encode($cart);

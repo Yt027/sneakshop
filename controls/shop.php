@@ -23,6 +23,7 @@ foreach ($products as $key => $product) {
     $id = $product["id"];
     $link = APP_URL . "product?target=$id";
     $isCarted = isset($cart[$id]) ? "carted" : "";
+    $btnTitle = $isCarted == "carted" ? "Supprimer du panier" : "Ajouter au panier";
     $productImage = ""; // Image par défaut
 
     // Chargement des images du produit
@@ -54,7 +55,7 @@ foreach ($products as $key => $product) {
             </div>
 
             <div class='ban'>
-                <button class='add-to-cart' title='Ajouter au panier'><span class='bx bx-cart'></span></button>
+                <button class='add-to-cart' title='$btnTitle'><span class='bx bx-cart'></span></button>
             </div>
         </div>
     ";

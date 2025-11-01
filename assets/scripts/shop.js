@@ -4,14 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const container = card.parentElement
         const id = card.dataset["id"];
 
-        cartBtn = card.querySelector(".add-to-cart");
+        const cartBtn = card.querySelector(".ban .add-to-cart");
         cartBtn.addEventListener("click", () => {
-            let isCarted = card.className.includes("carted");
             addToCart("shop", id, 1)
                 .then(data => {
                     if (data.inCart) {
                         card.classList.add("carted");
-                        cartBtn.setAttribute("title", "Supprimer panier");
+                        cartBtn.setAttribute("title", "Supprimer du panier");
                     } else {
                         card.classList.remove("carted");
                         cartBtn.setAttribute("title", "Ajouter au panier");
