@@ -22,6 +22,7 @@ class ComposerStaticInit108be68e4e2b97fed51d36a10eed0849
         'P' => 
         array (
             'PhpOption\\' => 10,
+            'Paydunya\\' => 9,
         ),
         'G' => 
         array (
@@ -50,6 +51,10 @@ class ComposerStaticInit108be68e4e2b97fed51d36a10eed0849
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
+        'Paydunya\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paydunya/paydunya/src',
+        ),
         'GrahamCampbell\\ResultType\\' => 
         array (
             0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
@@ -57,6 +62,16 @@ class ComposerStaticInit108be68e4e2b97fed51d36a10eed0849
         'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'R' => 
+        array (
+            'Requests' => 
+            array (
+                0 => __DIR__ . '/..' . '/rmccue/requests/library',
+            ),
         ),
     );
 
@@ -74,6 +89,7 @@ class ComposerStaticInit108be68e4e2b97fed51d36a10eed0849
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit108be68e4e2b97fed51d36a10eed0849::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit108be68e4e2b97fed51d36a10eed0849::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit108be68e4e2b97fed51d36a10eed0849::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit108be68e4e2b97fed51d36a10eed0849::$classMap;
 
         }, null, ClassLoader::class);
