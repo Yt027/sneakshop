@@ -3,6 +3,9 @@
 // Page configs
 define("PAGE", "login");
 define("TITLE", "Connexion | SneakShop");
+
+// Page Controller
+require_once __DIR__ . "/../controls/login.php";
 ?>
 
 
@@ -24,7 +27,7 @@ define("TITLE", "Connexion | SneakShop");
 
     <!-- HOME PAGE Start -->
     <main class="page">
-        <form action="" class="default sign">
+        <form action="" class="default sign" method="post">
             <div class="image">
                 <img loading="lazy" src="<?= APP_URL ?>assets/images/cropped-image-of-basketball-player-playing-basketb-2022-12-16-20-45-01-utc-1.jpg" alt="">
             </div>
@@ -46,7 +49,7 @@ define("TITLE", "Connexion | SneakShop");
                     </div>
                 </label>
 
-                <button type="submit" class="cta-btn submit">Continuer</button>
+                <button name="submit" type="submit" class="cta-btn submit">Continuer</button>
             </div>
         </form>
     </main>

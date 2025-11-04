@@ -47,7 +47,7 @@ class Users {
         $stmt->bindParam(':first_name', $first_name);
         $stmt->bindParam(':last_name', $last_name);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':password', password_hash($password, PASSWORD_DEFAULT));
 
         if ($stmt->execute()) {
             return $this->conn->lastInsertId();
@@ -57,8 +57,9 @@ class Users {
 
     public function checkUser($email, $password) {
         $user = $this->getUserByEmail($email);
-        if($user && password_hash($password, PASSWORD_DEFAULT) === $user["password"]) {
-            return true;
+        if($user && password_verify($password, $user["password"])) {
+            unset($user["id"]);
+            return $user;
         }
         return false;
     }
