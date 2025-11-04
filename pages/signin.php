@@ -3,6 +3,10 @@
 // Page configs
 define("PAGE", "signin");
 define("TITLE", "Inscription | SneakShop");
+
+
+// Page controller
+require_once __DIR__ . "/../controls/signin.php";
 ?>
 
 
@@ -22,7 +26,7 @@ define("TITLE", "Inscription | SneakShop");
 
     <!-- HOME PAGE Start -->
     <main class="page">
-        <form action="" class="default sign">
+        <form action="" class="default sign" method="post">
             <div class="image">
                 <img loading="lazy" src="<?=APP_URL?>assets/images/young-athlete-man-tying-lace-on-running-shoes-duri-2022-12-03-22-10-14-utc-3.jpg" alt="">
             </div>
@@ -60,7 +64,7 @@ define("TITLE", "Inscription | SneakShop");
                     <input class="password-conf" data-target="form .password .box input" type="password" name="password-conf" id="" required aria-required="true">
                 </label>
 
-                <button type="submit" class="cta-btn submit">Continuer</button>
+                <button name="submit" type="submit" class="cta-btn submit">Continuer</button>
             </div>
         </form>
     </main>
