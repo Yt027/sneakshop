@@ -30,6 +30,7 @@ $routes = [
     '/' . APP_name . '/pay' => 'dunya-pay',
     '/' . APP_name . '/signin' => 'signin',
     '/' . APP_name . '/login' => 'login',
+    '/' . APP_name . '/mailcheck' => 'check-email',
     '/' . APP_name . '/admin' => 'admin',
     '/' . APP_name . '/dashboard' => 'dashboard',
     '/' . APP_name . '/admin-add-product' => 'add-product',

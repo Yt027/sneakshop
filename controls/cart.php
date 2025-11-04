@@ -14,8 +14,7 @@ $data = [
 
 $productList = json_decode($_SESSION["cart"]) ?? [];
 
-foreach ($productList as $id => $details) {
-    $qty = $details->qty;
+foreach ($productList as $id => $qty) {
     $product = $productsModel->getProductById($id);
 
     if($product) {

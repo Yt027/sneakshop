@@ -1,6 +1,8 @@
 <?php
 
-if (!isset($_POST["id"]) || !isset($_POST["origin"])) {
+require_once __DIR__ . "/../models/cart.php";
+
+if (!isset($_POST["id"])) {
     echo json_encode(["error" => "Invalid request"]);
     exit;
 }
@@ -9,26 +11,49 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-$cart = json_decode($_SESSION["cart"] ?? "[]", true);
 $productId = intval($_POST["id"]);
-$qty = intval($_POST["qty"]);
-if ($_POST["origin"] === "shop") {
+$qty = isset($_POST["qty"]) ? intval($_POST["qty"]) : 1;
+
+$isUser = isset($_SESSION["user"]) && isset($_SESSION["user"]["email"]);
+if ($isUser) {
+    $cartModel = new Cart($_SESSION["user"]["email"]);
+    $cart = $cartModel->cart;
+    if (!is_array($cart)) $cart = [];
+} else {
+    $cart = json_decode($_SESSION["cart"] ?? "{}", true);
+    if (!is_array($cart)) $cart = [];
+}
+
+// Action: add/remove/update
+$action = $_POST["origin"] ?? "shop";
+if ($action === "shop") {
     if (isset($cart[$productId])) {
         unset($cart[$productId]);
-        echo json_encode(["success" => true, "inCart" => false, "removed" => $productId]);
+        $inCart = false;
+        $response = ["success" => true, "inCart" => false, "removed" => $productId];
     } else {
-        $cart[$productId] = ["qty" => 1];
-        echo json_encode(["success" => true, "inCart" => true, "added" => $productId]);
+        $cart[$productId] = 1;
+        $inCart = true;
+        $response = ["success" => true, "inCart" => true, "added" => $productId];
     }
-} else if($_POST["origin"] === "cart") {
-    if(!$_POST["qty"] == 0) {
-        $cart[$productId] = ["qty" => $qty];
-        echo json_encode(["inCart" => [$productId, $qty]]);
+} else if ($action === "cart") {
+    if ($qty > 0) {
+        $cart[$productId] = $qty;
+        $inCart = true;
+        $response = ["inCart" => [$productId, $qty]];
     } else {
         unset($cart[$productId]);
-        echo json_encode(["outCart" => $productId]);
+        $inCart = false;
+        $response = ["outCart" => $productId];
     }
 } else {
-    echo json_encode(["error" => "Unknown action"]);
+    $response = ["error" => "Unknown action"];
+}
+
+// Sauvegarde
+if ($isUser) {
+    $cartModel->setCart($cart);
 }
 $_SESSION["cart"] = json_encode($cart);
+
+echo json_encode($response);

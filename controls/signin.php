@@ -7,6 +7,7 @@ if (isset($_POST["submit"])) {
     $last_name = htmlspecialchars(trim($_POST["lastName"]));
     $email = htmlspecialchars(trim($_POST["email"]));
     $password = htmlspecialchars(trim($_POST["password"]));
+    $cart = json_encode([]);
 
     // Exit non-filled form
     if (empty($first_name) || empty($last_name) || empty($email) || empty($password)) {
@@ -14,6 +15,6 @@ if (isset($_POST["submit"])) {
     }
 
     $userModel = new Users();
-    $user = $userModel->addUser($first_name, $last_name, $email, $password);
+    $user = $userModel->addUser($first_name, $last_name, $email, $password, $cart);
     var_dump($user);
 }

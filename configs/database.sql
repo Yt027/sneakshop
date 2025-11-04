@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 03 nov. 2025 à 23:52
+-- Généré le : mar. 04 nov. 2025 à 23:13
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -52,6 +52,19 @@ INSERT INTO `products` (`id`, `category`, `name`, `description`, `large_descript
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `temp`
+--
+
+CREATE TABLE `temp` (
+  `id` int(11) NOT NULL,
+  `content` text NOT NULL,
+  `registration` timestamp NOT NULL DEFAULT current_timestamp(),
+  `deletion` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `users`
 --
 
@@ -61,10 +74,17 @@ CREATE TABLE `users` (
   `last_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` text NOT NULL,
-  `cart` text NOT NULL DEFAULT '[]',
-  `bought` text NOT NULL DEFAULT '[]',
+  `cart` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '[]' CHECK (json_valid(`cart`)),
+  `bought` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '[]',
   `regstration` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `cart`, `bought`, `regstration`) VALUES
+(5, 'Yaya', 'Tangara', 'yayatangara027@gmail.com', '$2y$10$hcdMYvZfv4.Wsisn5BI0.u0KzmZv1TID5pBnwTIG87BrVW3v8JhZm', '{\"2\":1}', '[]', '2025-11-04 10:22:35');
 
 --
 -- Index pour les tables déchargées
@@ -74,6 +94,12 @@ CREATE TABLE `users` (
 -- Index pour la table `products`
 --
 ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `temp`
+--
+ALTER TABLE `temp`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -93,10 +119,16 @@ ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT pour la table `temp`
+--
+ALTER TABLE `temp`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

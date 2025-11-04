@@ -34,20 +34,21 @@ class Users {
         return $stmt->fetch();
     }
 
-    public function addUser($first_name, $last_name, $email, $password)
+    public function addUser($first_name, $last_name, $email, $password, $cart)
     {
         // Return -1 if another user exist with the same email address
         if($this->getUserByEmail($email)) {
             return -1;
         }
 
-        $query = "INSERT INTO users (first_name, last_name, email, password) VALUES (:first_name, :last_name, :email, :password)";
+        $query = "INSERT INTO users (first_name, last_name, email, password, cart) VALUES (:first_name, :last_name, :email, :password, :cart)";
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(':first_name', $first_name);
         $stmt->bindParam(':last_name', $last_name);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', password_hash($password, PASSWORD_DEFAULT));
+        $stmt->bindParam(':cart', $cart);
 
         if ($stmt->execute()) {
             return $this->conn->lastInsertId();
@@ -59,6 +60,7 @@ class Users {
         $user = $this->getUserByEmail($email);
         if($user && password_verify($password, $user["password"])) {
             unset($user["id"]);
+            unset($user["password"]);
             return $user;
         }
         return false;
