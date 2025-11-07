@@ -25,8 +25,8 @@ if ($isUser) {
 }
 
 // Action: add/remove/update
-$action = $_POST["origin"] ?? "shop";
-if ($action === "shop") {
+$origin = $_POST["origin"] ?? "shop";
+if ($origin === "shop") {
     if (isset($cart[$productId])) {
         unset($cart[$productId]);
         $inCart = false;
@@ -36,7 +36,7 @@ if ($action === "shop") {
         $inCart = true;
         $response = ["success" => true, "inCart" => true, "added" => $productId];
     }
-} else if ($action === "cart") {
+} else if ($origin === "cart" || $origin === "product") {
     if ($qty > 0) {
         $cart[$productId] = $qty;
         $inCart = true;

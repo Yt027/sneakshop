@@ -25,7 +25,7 @@ require_once __DIR__ . "/../controls/product.php";
 
     <!-- HOME PAGE Start -->
     <main class="page">
-        <section class="product">
+        <section class="product" data-key="<?=$productId?>">
             <div class="images">
                 <div class="main-image">
                     <?php foreach ($productImages as $image) : ?>
@@ -65,7 +65,7 @@ require_once __DIR__ . "/../controls/product.php";
 
                 <form action="" class="counter-add-to-cart">
                     <div class="counter">
-                        <input type="number" name="quantity" id="" min="1" max="<?= $product['stock'] ?>" class="number" value="1">
+                        <input type="number" name="quantity" id="" min="1" max="<?= $product['stock'] ?>" class="number" value="<?=$cartQty?>">
 
                         <div class="btns">
                             <div class="btn plus"><i class="bx bxs-up-arrow"></i></div>

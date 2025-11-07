@@ -1,5 +1,10 @@
 <?php
 require_once __DIR__ . "/../models/products.php";
+require_once __DIR__ . "/../models/cart.php";
+
+if(!isset($_SESSION)) {
+    session_start();
+}
 
 if (!isset($_GET['target'])) {
     // Redirect to home if no product ID is provided
@@ -17,6 +22,23 @@ if (!$product) {
     header("Location: " . APP_URL . "shop");
     exit();
 }
+
+// Loading carted quantity of current product
+if(!isset($_SESSION)) {
+    session_start();
+}
+
+$cartModel = Null;
+$cart;
+if(isset($_SESSION["user"]) && isset($_SESSION["user"]["email"])) {
+    $cartModel = new Cart($_SESSION["user"]["email"]);
+    echo "hello";
+    $cart = $cartModel->cart;
+} else {
+    $cart = json_decode($_SESSION["cart"] ?? '[]', true);
+}
+
+$cartQty = isset($cart[$productId]) ? $cart[$productId] : 1;
 
 // Setting page title
 define("TITLE", "SneakShop - " . $product["name"]);
