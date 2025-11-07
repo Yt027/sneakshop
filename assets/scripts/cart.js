@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll(".cart .wrapper .item").forEach(cartItem => {
     const id = cartItem.dataset['key'];
 
-    // Changing value
+    // Changing value with arrow buttons
     cartItem.querySelectorAll(".cart-counter .btn").forEach(btn => {
       btn.onclick = () => {
         let min = Number(cartItem.querySelector(".cart-counter input.number").getAttribute("min")) || undefined
@@ -17,12 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (max && newV > max) { newV = max }
         cartItem.querySelector(".cart-counter input.number").value = newV
 
-        // Sending new value to add-to-cart API
-        addToCart("cart", id, newV)
-          .then(data => {
-              console.log(data);              
-          })
+        changeQty(id, newV);
       }
+    })
+
+    // Change value with direct input
+    cartItem.querySelector("input.number").addEventListener("input", e => {
+      let value = Number(e.target.value);
+      if(value <= 0) {
+        e.target.value = 1;
+        value = 1;
+      }
+
+      changeQty(id, value)
     })
 
     // Removing from cart
@@ -35,6 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
       // Removing product
       cartItem.style.display = "none";
     })
+
+    // Add non null quantity to cart
+    function changeQty(id, qty) {
+      // Sending new value to add-to-cart API
+        addToCart("cart", id, qty)
+          .then(data => {
+              console.log(data);              
+          })
+    }
   })
   // Product quantity selector End
 })
