@@ -5,7 +5,7 @@ define("PAGE", "login");
 define("TITLE", "Connexion | SneakShop");
 
 // Page Controller
-require_once __DIR__ . "/../controls/login.php";
+require_once __DIR__ . "/../controls/check-email-passkey.php";
 ?>
 
 
@@ -39,7 +39,7 @@ require_once __DIR__ . "/../controls/login.php";
                     <input type="text" name="keypass" id="" placeholder="" required aria-required="true" minlength="6" maxlength="6" style="letter-spacing: 20px;">
                 </label>
 
-                <button name="submit" type="submit" class="cta-btn submit">Continuer</button>
+                <input type="submit" value="Continuer" name="submit" class="cta-btn submit">
             </div>
         </form>
     </main>

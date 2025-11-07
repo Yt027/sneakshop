@@ -7,4 +7,6 @@ define("APP_NAME", "<u>S</u>neakShop");
 
 
 // Main functions
+require_once __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/./user.php";
+require_once __DIR__ . "/./miscellanous.php";

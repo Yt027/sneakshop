@@ -6,7 +6,7 @@ define("TITLE", "Inscription | SneakShop");
 
 
 // Page controller
-require_once __DIR__ . "/../controls/signin.php";
+require_once __DIR__ . "/../controls/checkmail.php";
 ?>
 
 
@@ -64,7 +64,7 @@ require_once __DIR__ . "/../controls/signin.php";
                     <input class="password-conf" data-target="form .password .box input" type="password" name="password-conf" id="" required aria-required="true">
                 </label>
 
-                <button name="submit" type="submit" class="cta-btn submit">Continuer</button>
+                <input type="submit" value="Continuer" name="submit" class="cta-btn submit">
             </div>
         </form>
     </main>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mar. 04 nov. 2025 à 23:13
+-- Généré le : jeu. 06 nov. 2025 à 13:59
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -52,14 +52,14 @@ INSERT INTO `products` (`id`, `category`, `name`, `description`, `large_descript
 -- --------------------------------------------------------
 
 --
--- Structure de la table `temp`
+-- Structure de la table `temps`
 --
 
-CREATE TABLE `temp` (
+CREATE TABLE `temps` (
   `id` int(11) NOT NULL,
   `content` text NOT NULL,
-  `registration` timestamp NOT NULL DEFAULT current_timestamp(),
-  `deletion` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `registration` int(11) NOT NULL,
+  `deletion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -97,9 +97,9 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `temp`
+-- Index pour la table `temps`
 --
-ALTER TABLE `temp`
+ALTER TABLE `temps`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -119,9 +119,9 @@ ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `temp`
+-- AUTO_INCREMENT pour la table `temps`
 --
-ALTER TABLE `temp`
+ALTER TABLE `temps`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --

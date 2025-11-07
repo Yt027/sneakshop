@@ -1,6 +1,7 @@
 {
     "require": {
         "vlucas/phpdotenv": "^5.6",
-        "paydunya/paydunya": "^1.0"
+        "paydunya/paydunya": "^1.0",
+        "phpmailer/phpmailer": "^7.0"
     }
 }
