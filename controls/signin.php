@@ -16,5 +16,18 @@ if (isset($_POST["submit"])) {
 
     $userModel = new Users();
     $user = $userModel->addUser($first_name, $last_name, $email, $password, $cart);
-    var_dump($user);
+    
+    if($user) {
+        // Starting user session
+        userConnect($user);
+        // Transfer session cart to database cart
+        if(isset($_SESSION["cart"]) && !empty(json_decode($_SESSION["cart"]))) {
+            require_once __DIR__ . "/../models/cart.php";
+            $cart = new Cart($email);
+            $cart->setCart($_SESSION["cart"]);
+            unset($_SESSION["cart"]);
+        }
+
+        header("Location: " . APP_URL);
+    }
 }

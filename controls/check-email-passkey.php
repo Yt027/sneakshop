@@ -3,23 +3,28 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if (!isset($_SESSION["auth_mail_sent"]) || !isset($_SESSION["auth_mail_sent"]["data"]) || !isset($_SESSION["auth_mail_sent"]["code"])) {
+// Return to signin when auth_mail_sent don't exist
+if (!isset($_SESSION["auth_mail_sent"])) {
     header("Location: " . APP_URL . "signin");
     exit();
 }
 
 
 if (isset($_POST["submit"])) {
+    // Extract user passed keypass
     $passkey = htmlspecialchars(trim($_POST["keypass"]));
     
+    // Extract + delete auth_mail_sent
     $data = $_SESSION["auth_mail_sent"];
     $data = json_decode($data, true);
     unset($_SESSION["auth_mail_sent"]);
     
-    if (!$passkey === $data["code"]) {
+    if (!$passkey === $data["code"] || time() > $data["expiration"]) {
+        // Exit if user gave a wrong or expired keypass
         header("Location: " . APP_URL . "signin");
         exit;
     } else {
+        // Get user's IDs
         $signin = $data["data"];
         $_POST["firstName"] = $signin["firstName"];
         $_POST["lastName"] = $signin["lastName"];

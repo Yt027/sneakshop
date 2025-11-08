@@ -2,7 +2,7 @@
 //
 // Page configs
 define("PAGE", "login");
-define("TITLE", "Connexion | SneakShop");
+define("TITLE", "Vérfication Email | SneakShop");
 
 // Page Controller
 require_once __DIR__ . "/../controls/check-email-passkey.php";

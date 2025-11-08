@@ -1,10 +1,12 @@
 <?php
 require_once __DIR__ . "/../models/users.php";
-require_once __DIR__ . "/../models/temps.php";
-$_SESSION = [];
+if(!isset($_SESSION)) {
+    session_start();
+}
+// $_SESSION = [];
 var_dump($_SESSION);
+
 if (isset($_POST["submit"])) {
-    echo "hello";
     // Sanitizing inputs
     $first_name = htmlspecialchars(trim($_POST["firstName"]));
     $last_name = htmlspecialchars(trim($_POST["lastName"]));
@@ -31,10 +33,10 @@ if (isset($_POST["submit"])) {
         for ($i=0; $i < 6; $i++) { 
             $code .= random_int(0, 9);
         }
-        // Save code into temp table
-        // var_dump($code);
+
+        // Save code into temp       
         $tempData = [
-            "email" => $email,
+            "expiration" => time() + (5 * 60), // 5 minutes expiration code
             "code" => $code,
             "data" => $data
         ];
@@ -42,8 +44,12 @@ if (isset($_POST["submit"])) {
         $tempData = json_encode($tempData);
 
         // Send code to email
-        $_SESSION["auth_mail_sent"] = $tempData;
-        sendMail($email, "Votre code", "<h3>Votre code de vérifcation Sneakshop est $code</h3>");
+        $msg = "Votre code de vérifcation Sneakshop est $code";
+        if(sendMail($email, "Votre code", "<h3>$msg</h3>", $msg) == true){
+            $_SESSION["auth_mail_sent"] = $tempData;
+        } else {
+            echo "Une erreur est survenue, veuillez réessayer";
+        }
     }
     $url = APP_URL . "mailcheck";
     header("Location: $url");
