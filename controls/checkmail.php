@@ -15,9 +15,9 @@ if (isset($_POST["submit"])) {
     $cart = json_encode([]);
 
     // Exit non-filled form
-    // if (empty($first_name) || empty($last_name) || empty($email) || empty($password)) {
-    //     return false;
-    // }
+    if (empty($first_name) || empty($last_name) || empty($email) || empty($password)) {
+        exit;
+    }
 
     $data = [
         "firstName" => $first_name,
@@ -53,4 +53,5 @@ if (isset($_POST["submit"])) {
     }
     $url = APP_URL . "mailcheck";
     header("Location: $url");
+    exit;
 }

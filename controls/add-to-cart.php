@@ -53,7 +53,8 @@ if ($origin === "shop") {
 // Sauvegarde
 if ($isUser) {
     $cartModel->setCart($cart);
+} else {
+    $_SESSION["cart"] = json_encode($cart);
 }
-$_SESSION["cart"] = json_encode($cart);
 
 echo json_encode($response);

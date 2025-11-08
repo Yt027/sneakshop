@@ -62,6 +62,7 @@ class Users {
             unset($user["id"]);
             unset($user["privilege"]);
             unset($user["password"]);
+            unset($user["cart"]);
             return $user;
         }
         return false;

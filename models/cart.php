@@ -33,8 +33,4 @@ class Cart {
 
         $this->cart = $cart;
     }
-
-    public function add() {
-        echo "";
-    }
 }
