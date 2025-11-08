@@ -15,7 +15,8 @@ if (isset($_POST["submit"])) {
     }
 
     $userModel = new Users();
-    $user = $userModel->addUser($first_name, $last_name, $email, $password, $cart);
+    $userId = $userModel->addUser($first_name, $last_name, $email, $password, $cart);
+    $user = $userModel->checkUser($email, $password);
     
     if($user) {
         // Starting user session

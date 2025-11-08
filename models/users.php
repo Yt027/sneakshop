@@ -60,6 +60,7 @@ class Users {
         $user = $this->getUserByEmail($email);
         if($user && password_verify($password, $user["password"])) {
             unset($user["id"]);
+            unset($user["privilege"]);
             unset($user["password"]);
             return $user;
         }
