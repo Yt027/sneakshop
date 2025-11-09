@@ -9,8 +9,10 @@
 
 3. Create a new database named `sneakshop` using phpmyadmin or another tool
 
-4. Update database credentials to yours in `sneakshop/configs/.env`
+4. Create required tables in your newly created database (sneakshop) by executing sql commands in `sneakshop/configs/database.sql`
 
-5. Create required tables in your newly created database (sneakshop) by executing sql commands in `sneakshop/configs/database.sql`
+5. Update database credentials to yours in `sneakshop/configs/.env` [See configs/README.md for details](./configs/README.md).
 
-6. Check `http://localhost/sneakshop` then enjoy
+6. Update paydunya API keys to yours in `payments/.env` in order to be able to proceed payments [Check payments/README.md for details](./payments/README.md).
+
+7. Visite `http://localhost/sneakshop` then enjoy
