@@ -22,7 +22,7 @@ function sendMail($to, $head, $body, $bodyAlt) {
         $mail->Port       = 587;
 
         // Expeditor & receiver
-        $mail->setFrom("contact@yayadev.net", 'Yaya');
+        $mail->setFrom("contact@yayadev.net", 'Sneakshop');
         $mail->addAddress($to, 'Destinataire');
 
         // Content of the message

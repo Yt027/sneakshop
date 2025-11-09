@@ -1,5 +1,10 @@
 <?php
 require_once __DIR__ . "/../models/users.php";
+if(!isset($_SESSION)) {
+    session_start();
+}
+// $_SESSION = [];
+var_dump($_SESSION);
 
 if (isset($_POST["submit"])) {
     // Sanitizing inputs
@@ -11,24 +16,45 @@ if (isset($_POST["submit"])) {
 
     // Exit non-filled form
     if (empty($first_name) || empty($last_name) || empty($email) || empty($password)) {
-        return false;
+        exit;
     }
 
-    $userModel = new Users();
-    $userId = $userModel->addUser($first_name, $last_name, $email, $password, $cart);
-    $user = $userModel->checkUser($email, $password);
+    $data = [
+        "firstName" => $first_name,
+        "lastName" => $last_name,
+        "email" => $email,
+        "password" => $password,
+        "cart" => $cart
+    ];
     
-    if($user) {
-        // Starting user session
-        userConnect($user);
-        // Transfer session cart to database cart
-        if(isset($_SESSION["cart"]) && !empty(json_decode($_SESSION["cart"]))) {
-            require_once __DIR__ . "/../models/cart.php";
-            $cart = new Cart($email);
-            $cart->setCart($_SESSION["cart"]);
-            unset($_SESSION["cart"]);
+    if(!isset($_SESSION["auth_mail_sent"])) {
+        // Create 6 characters code
+        $code = "";
+        for ($i=0; $i < 6; $i++) { 
+            $code .= random_int(0, 9);
         }
 
-        header("Location: " . APP_URL);
+        // Save code into temp       
+        $tempData = [
+            "expiration" => time() + (5 * 60), // 5 minutes expiration code
+            "code" => $code,
+            "data" => $data
+        ];
+
+        $tempData = json_encode($tempData);
+
+        // Send code to email
+        $msg = "Votre code de vérifcation Sneakshop est $code";
+        if(sendMail($email, "Votre code - $code", "<h3>$msg</h3>", $msg) == true){
+            $_SESSION["auth_mail_sent"] = $tempData;
+        } else {
+            echo "Une erreur est survenue, veuillez réessayer";
+        }
     }
+    $url = APP_URL . "mailcheck";
+    header("Location: $url");
+    exit;
+} else if(isset($_SESSION["auth_mail_sent"])) {
+    // If user come back to this page, remove auth_mail_sent
+    unset($_SESSION["auth_mail_sent"]);
 }

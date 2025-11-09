@@ -5,7 +5,7 @@ define("PAGE", "login");
 define("TITLE", "Vérfication Email | SneakShop");
 
 // Page Controller
-require_once __DIR__ . "/../controls/check-email-passkey.php";
+require_once __DIR__ . "/../controls/check-email.php";
 ?>
 
 

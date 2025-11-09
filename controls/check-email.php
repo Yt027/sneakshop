@@ -32,6 +32,6 @@ if (isset($_POST["submit"])) {
         $_POST["password"] = $signin["password"];
         $_POST["cart"] = $signin["cart"];
         
-        require_once __DIR__ . "/./signin.php";
+        require_once __DIR__ . "/./add-user.php";
     }
 }

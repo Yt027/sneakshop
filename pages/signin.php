@@ -6,7 +6,7 @@ define("TITLE", "Inscription | SneakShop");
 
 
 // Page controller
-require_once __DIR__ . "/../controls/checkmail.php";
+require_once __DIR__ . "/../controls/signin.php";
 ?>
 
 
