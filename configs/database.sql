@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : jeu. 06 nov. 2025 à 13:59
+-- Généré le : dim. 09 nov. 2025 à 20:06
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -52,24 +52,12 @@ INSERT INTO `products` (`id`, `category`, `name`, `description`, `large_descript
 -- --------------------------------------------------------
 
 --
--- Structure de la table `temps`
---
-
-CREATE TABLE `temps` (
-  `id` int(11) NOT NULL,
-  `content` text NOT NULL,
-  `registration` int(11) NOT NULL,
-  `deletion` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `users`
 --
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `privilege` int(11) NOT NULL DEFAULT 0,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -83,8 +71,8 @@ CREATE TABLE `users` (
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `cart`, `bought`, `regstration`) VALUES
-(5, 'Yaya', 'Tangara', 'yayatangara027@gmail.com', '$2y$10$hcdMYvZfv4.Wsisn5BI0.u0KzmZv1TID5pBnwTIG87BrVW3v8JhZm', '{\"2\":1}', '[]', '2025-11-04 10:22:35');
+INSERT INTO `users` (`id`, `privilege`, `first_name`, `last_name`, `email`, `password`, `cart`, `bought`, `regstration`) VALUES
+(7, 0, 'Yaya', 'Tangara', 'yayatangara027@gmail.com', '$2y$10$jGnWtvLrII8pTv08MN5UgeLERDtlz7I7Vot9PfTnZaO2Kpxbuu/WO', '[]', '[]', '2025-11-09 19:04:22');
 
 --
 -- Index pour les tables déchargées
@@ -94,12 +82,6 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `cart
 -- Index pour la table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `temps`
---
-ALTER TABLE `temps`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -119,16 +101,10 @@ ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `temps`
---
-ALTER TABLE `temps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
