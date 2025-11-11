@@ -1,0 +1,16 @@
+@media screen and (max-width: 1024px) {
+    /* Hero Section Start */
+    .hero {
+        background-position: center -150px;
+    }
+    /* Hero Section End */
+}
+
+
+@media screen and (max-width: 800px) {
+    /* Hero Section Start */
+    .hero {
+        background-position: center center;
+    }
+    /* Hero Section End */
+}
