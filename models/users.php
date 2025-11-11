@@ -11,13 +11,6 @@ class Users {
         $this->conn = $connection;
     }
 
-    public function getAllUsers() {
-        $query = "SELECT * FROM users";
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-        return $stmt->fetchAll();
-    }
-
     private function getUserById($id) {
         $query = "SELECT * FROM users WHERE id = :id";
         $stmt = $this->conn->prepare($query);
@@ -33,6 +26,37 @@ class Users {
         $stmt->execute();
         return $stmt->fetch();
     }
+
+    private function setAdminPrivilege($email) {
+        $query = "UPDATE users SET privilege = 10 WHERE email = :email";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':email', $email);
+        return $stmt->execute();
+    }
+
+    private function getPrivilegeByEmail($email) {
+        $query = "SELECT privilege FROM users WHERE email = :email";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        $result = $stmt->fetch();
+        return $result ? $result['privilege'] : null;
+    }
+
+    public function isAdmin($email) {
+        $privilege = $this->getPrivilegeByEmail($email);
+        if($privilege >= 10) {
+            return true;
+        }
+        return false;
+    }
+
+    public function getAllUsers() {
+        $query = "SELECT * FROM users";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }    
 
     public function addUser($first_name, $last_name, $email, $password, $cart)
     {
@@ -51,7 +75,14 @@ class Users {
         $stmt->bindParam(':cart', $cart);
 
         if ($stmt->execute()) {
-            return $this->conn->lastInsertId();
+            $userId = $this->conn->lastInsertId();
+
+            // Give admin status to the first registered user - premier arrivé, premier servi
+            if(intval($userId) === 1) {
+                $this->setAdminPrivilege($email);
+            }
+
+            return $userId;
         }
         return false;
     }

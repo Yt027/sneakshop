@@ -1,6 +1,4 @@
 <?php
-require_once __DIR__ . "/../models/users.php";
-
 if (isset($_POST["submit"])) {
     // Sanitizing inputs
     $first_name = htmlspecialchars(trim($_POST["firstName"]));
@@ -23,7 +21,6 @@ if (isset($_POST["submit"])) {
         userConnect($user);
         // Transfer session cart to database cart
         if(isset($_SESSION["cart"]) && !empty(json_decode($_SESSION["cart"]))) {
-            require_once __DIR__ . "/../models/cart.php";
             $cart = new Cart($email);
             $cart->setCart($_SESSION["cart"]);
             unset($_SESSION["cart"]);

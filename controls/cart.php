@@ -1,6 +1,5 @@
 <?php
 // Loading database
-require_once __DIR__ . "/../models/products.php";
 $productsModel = new Products();
 
 // Loading cart

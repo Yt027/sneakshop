@@ -3,6 +3,9 @@
 // Page configs
 define("PAGE", "dashboard");
 define("TITLE", "Dashboard | SneakShop");
+
+// Page Controller
+require_once __DIR__ . "/../controls/admin-dashboard.php";
 ?>
 
 

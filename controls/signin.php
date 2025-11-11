@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . "/../models/users.php";
 if(!isset($_SESSION)) {
     session_start();
 }

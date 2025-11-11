@@ -1,6 +1,4 @@
 <?php
-require_once __DIR__ . "/../models/products.php";
-
 // The Products class needs the database connection, which is created in database.php
 // and should be available. Let's assume $db is available from including a config file
 // in the page that includes this script.

@@ -1,7 +1,5 @@
 <?php
 // Loading Database
-require_once __DIR__ . "/../models/products.php";
-// require_once __DIR__ . "/../models/cart.php";
 $productsModel = new Products();
 $products = $productsModel->getAllProducts();
 

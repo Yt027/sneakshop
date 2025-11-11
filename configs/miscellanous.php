@@ -2,10 +2,6 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require_once __DIR__ . "/../vendor/autoload.php";
-require_once __DIR__ . "/../models/cart.php";
-
-
 // Send email from any page
 function sendMail($to, $head, $body, $bodyAlt) {
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
@@ -41,9 +37,9 @@ function sendMail($to, $head, $body, $bodyAlt) {
 }
 
 // Get cart anywhere
-function loadCart(){
+function loadCart() {
     $cartModel = Null;
-    $cart;
+    $cart = Null;
     if(isset($_SESSION["user"]) && isset($_SESSION["user"]["email"])) {
         $cartModel = new Cart($_SESSION["user"]["email"]);
         $cart = $cartModel->cart;
@@ -51,4 +47,18 @@ function loadCart(){
         $cart = json_decode($_SESSION["cart"] ?? '[]', true);
     }
     return $cart;
+}
+
+// Give page access only to users with admin privileges
+function adminOnly() {
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+
+    $email = isset($_SESSION["user"]["email"]) ? $_SESSION["user"]["email"] : "";
+    $userModel = new Users();
+
+    if(!$userModel->isAdmin($email)) {
+        header("Location: " . APP_URL);
+    }
 }

@@ -5,6 +5,11 @@ define("APP_URL", HOST . "/sneakshop/");
 define("APP_name", "sneakshop");
 define("APP_NAME", "<u>S</u>neakShop");
 
+// Database models
+require_once __DIR__ . "/../models/cart.php";
+require_once __DIR__ . "/../models/products.php";
+require_once __DIR__ . "/../models/users.php";
+
 
 // Main functions
 require_once __DIR__ . "/../vendor/autoload.php";
