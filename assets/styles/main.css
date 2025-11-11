@@ -355,12 +355,12 @@ a {
     white-space: nowrap;
 }
 
-.product-container .product-card .content .top .name {
+.product-container .product-card .content .name {
     font-size: 1.1rem;
     font-weight: 500;
 }
 
-.product-container .product-card .content .top .price {
+.product-container .product-card .content .price {
     font-weight: 700;
     font-size: 1.2rem;
     line-height: 1.3;

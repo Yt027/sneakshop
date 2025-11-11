@@ -1,7 +1,7 @@
 <?php
 // Loading Database
 $productsModel = new Products();
-$products = $productsModel->getAllProducts();
+$products = $productsModel->getVisibleProducts();
 
 // Loading carted products
 if(!isset($_SESSION)) {

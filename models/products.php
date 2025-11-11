@@ -18,6 +18,13 @@ class Products {
         return $stmt->fetchAll();
     }
 
+    public function getVisibleProducts() {
+        $query = "SELECT * FROM products WHERE visible = 1";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
     public function getProductById($id) {
         $query = "SELECT * FROM products WHERE id = :id";
         $stmt = $this->conn->prepare($query);
@@ -52,5 +59,29 @@ class Products {
             return $this->conn->lastInsertId();
         }
         return false;
+    }
+
+    public function getVisibility($id) {
+        $query = "SELECT visible FROM products WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $state = $stmt->fetch()["visible"];
+        return $state;
+    }
+
+    public function toggleVisibility($id) {
+        $visibility = $this->getVisibility($id);
+        $nextVisibility = abs(intval($visibility) - 1);
+        try {
+            $query = "UPDATE products SET visible = :visibility WHERE id = :id";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(':visibility', $nextVisibility);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            return $nextVisibility;
+        } catch (\Throwable $th) {
+            return false;
+        }
     }
 }
