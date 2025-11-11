@@ -1,5 +1,10 @@
 <!-- Header Start -->
-<header class="header <?=isUserConneted() ? "logged" : ""?>">
+<header 
+    class="header 
+        <?=isUserConneted() ? "logged" : "" # Add logged class if user is connected?>
+        <?=loadCart() != [] ? "cart-filled" : "" # Add cart-filled class if cart is not empty?>
+    "
+>
     <a href="<?= APP_URL ?>" class="logo"><?= APP_NAME ?></a>
 
     <nav class="navbar">
@@ -19,7 +24,7 @@
         else {
             // Display cart link when user is connected
             ?>
-        <a href="<?=APP_URL?>cart" class="cta-btn inactive"><i class="bx bxs-cart"></i></a>
+        <a href="<?=APP_URL?>cart" class="cart-btn"><i class="bx bxs-cart"></i></a>
             <?php
         }?>
     </div>

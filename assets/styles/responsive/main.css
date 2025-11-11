@@ -103,6 +103,15 @@
         display: block;
         margin-left: 60px;
     }
+
+    /* User logged header */
+    .header.logged .cta .cart-btn {
+        margin-left: 0;
+    }
+
+    .header.logged .menu {
+        margin-left: 10px;
+    }
 }
 
 

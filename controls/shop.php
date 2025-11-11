@@ -1,7 +1,7 @@
 <?php
 // Loading Database
 require_once __DIR__ . "/../models/products.php";
-require_once __DIR__ . "/../models/cart.php";
+// require_once __DIR__ . "/../models/cart.php";
 $productsModel = new Products();
 $products = $productsModel->getAllProducts();
 
@@ -10,16 +10,8 @@ if(!isset($_SESSION)) {
     session_start();
 }
 
-$cartModel = Null;
-$cart;
-if(isset($_SESSION["user"]) && isset($_SESSION["user"]["email"])) {
-    $cartModel = new Cart($_SESSION["user"]["email"]);
-    echo "hello";
-    $cart = $cartModel->cart;
-} else {
-    $cart = json_decode($_SESSION["cart"] ?? '[]', true);
-}
-var_dump($cart);
+$cart = loadCart();
+
 $data = [
     "products" => ""
 ];

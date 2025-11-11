@@ -3,8 +3,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require_once __DIR__ . "/../vendor/autoload.php";
+require_once __DIR__ . "/../models/cart.php";
 
 
+// Send email from any page
 function sendMail($to, $head, $body, $bodyAlt) {
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
@@ -36,4 +38,17 @@ function sendMail($to, $head, $body, $bodyAlt) {
     } catch (Exception $e) {
         return $e;
     }
+}
+
+// Get cart anywhere
+function loadCart(){
+    $cartModel = Null;
+    $cart;
+    if(isset($_SESSION["user"]) && isset($_SESSION["user"]["email"])) {
+        $cartModel = new Cart($_SESSION["user"]["email"]);
+        $cart = $cartModel->cart;
+    } else {
+        $cart = json_decode($_SESSION["cart"] ?? '[]', true);
+    }
+    return $cart;
 }

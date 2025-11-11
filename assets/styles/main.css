@@ -92,6 +92,9 @@ a {
     color: var(--color);
     width: 290px;
 }
+.header.logged .logo {
+    width: auto;
+}
 
 .header .navbar {
     margin: auto;
@@ -132,6 +135,43 @@ a {
 .header .cta {
     display: flex;
     gap: 20px;
+}
+
+/* Cart link */
+.header.logged .cta .cart-btn {
+    margin: 0;
+    margin-left: 135px;
+    font-size: 1.25em;
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+    /* border: 1px solid var(--primary-color); */
+    box-shadow: 0 0 4px -1px rgba(0, 0, 0, .7);
+    
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    position: relative;
+
+    transition: .2s;
+}
+.header.logged .cta .cart-btn:hover {
+    color: var(--primary-color);
+    background-color: inherit;
+}
+
+/* Cart link when cart-filled */
+.header.cart-filled .cta .cart-btn::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    border-radius: 50%;
 }
 
 

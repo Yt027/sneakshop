@@ -12,7 +12,7 @@ $data = [
     "products" => ""
 ];
 
-$productList = json_decode($_SESSION["cart"]) ?? [];
+$productList = loadCart();
 
 foreach ($productList as $id => $qty) {
     $product = $productsModel->getProductById($id);
