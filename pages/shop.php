@@ -38,38 +38,6 @@ require_once __DIR__ . "/../controls/shop.php";
                 <?php 
                     echo $data["products"];
                 ?>
-                <div class="product-card" data-id="1">
-                    <div class="image">
-                        <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
-                    </div>
-                    <div class="content">
-                        <div class="top">
-                            <h3 class="name">Nike Air Max 270 React</h3>
-                            <span class="price">75 000 FCFA</span>
-                        </div>
-                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                    </div>
-
-                    <div class="ban">
-                        <button class="add-to-cart" title="Ajouter au panier"><span class="bx bx-cart"></span></button>
-                    </div>
-                </div>
-                <div class="product-card" data-id="1">
-                    <div class="image">
-                        <img src="<?=APP_URL?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
-                    </div>
-                    <div class="content">
-                        <div class="top">
-                            <h3 class="name">Nike Air Max 270 React</h3>
-                            <span class="price">75 000 FCFA</span>
-                        </div>
-                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                    </div>
-
-                    <div class="ban">
-                        <button class="add-to-cart" title="Ajouter au panier"><span class="bx bx-cart"></span></button>
-                    </div>
-                </div>
             </div>
         </section>
     </main>

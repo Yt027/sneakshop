@@ -78,29 +78,6 @@ require_once __DIR__ . "/../admin/dashboard.php";
 
                 <div class="product-container">
                     <?=$data["products"] # Display products?>
-
-                    <div class="product-card" data-id="1">
-                        <div class="info">
-                            <div class="image">
-                                <img src="<?= APP_URL ?>assets/images/Running-Shoes.H03.2k.png" alt="" loading="lazy">
-                            </div>
-                            <div class="content">
-                                <h3 class="name">Nike Air Max 270 React</h3>
-                                <span class="price">75 000 FCFA</span>
-                            </div>
-                            
-                            <div class="mask">
-                                <i class="bx bx-low-vision"></i>
-                            </div>
-                        </div>
-
-                        <div class="cta">
-                            <a href="" class="cta-btn">Visiter</a>
-                            <a href="" class="cta-btn mask">Masquer</a>
-                            <a href="" class="cta-btn edit">Modifier</a>
-                            <a href="" class="cta-btn remove">Supprimer</a>
-                        </div>
-                    </div>
                 </div>
             </section>
 

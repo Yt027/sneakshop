@@ -48,10 +48,10 @@ foreach ($productsList as $key => $product) {
             </div>
 
             <div class='cta'>
-                <a target='_blank' href='$link' class='cta-btn'>Visiter</a>
-                <div class='cta-btn mask'>Masquer</div>
-                <a target='_blank' href='$editLink' class='cta-btn edit'>Modifier</a>
-                <a href='' class='cta-btn remove'>Supprimer</a>
+                <a target='_blank' href='$link' class='cta-btn rail'>Visiter</a>
+                <div class='cta-btn rail mask'>Masquer</div>
+                <a target='_blank' href='$editLink' class='cta-btn rail edit'>Modifier</a>
+                <a href='' class='cta-btn rail remove'>Supprimer</a>
             </div>
         </div>
     ";
