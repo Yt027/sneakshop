@@ -58,7 +58,7 @@ require_once __DIR__ . "/../controls/product.php";
                 <div class="caracteristics">
                     <?php if ($caracteristics): ?>
                         <?php foreach ($caracteristics as $key => $value) : ?>
-                            <div class="item"><?= htmlspecialchars($key) ?>: <?= htmlspecialchars($value) ?></div>
+                            <div class="item"><?= is_string($key) ? htmlspecialchars($key) . ": " : "" ?><?= htmlspecialchars($value) ?></div>
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </div>

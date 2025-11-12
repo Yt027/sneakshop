@@ -149,6 +149,13 @@
 /* Page General Styles End */
 
 /* Products section */
+.page .products {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: start;
+}
+
 .page .products .product-container .product-card {
     flex: 0 0 auto;
     display: flex;
