@@ -25,15 +25,7 @@ if(!isset($_SESSION)) {
     session_start();
 }
 
-$cartModel = Null;
-$cart;
-if(isset($_SESSION["user"]) && isset($_SESSION["user"]["email"])) {
-    $cartModel = new Cart($_SESSION["user"]["email"]);
-    echo "hello";
-    $cart = $cartModel->cart;
-} else {
-    $cart = json_decode($_SESSION["cart"] ?? '[]', true);
-}
+$cart = loadCart();
 
 $cartQty = isset($cart[$productId]) ? $cart[$productId] : 1;
 

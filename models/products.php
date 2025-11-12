@@ -61,6 +61,26 @@ class Products {
         return false;
     }
 
+    public function editProduct($key, $name, $category, $price, $stock, $description, $large_desc, $caracteristics)
+    {
+        $query = "UPDATE products SET name = :name, category = :category, price = :price, stock = :stock, description = :description, large_description = :large_desc, caracteristics = :caracteristics, notation = 1 WHERE id = :key";
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(':key', $key);
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':category', $category);
+        $stmt->bindParam(':price', $price);
+        $stmt->bindParam(':stock', $stock);
+        $stmt->bindParam(':description', $description);
+        $stmt->bindParam(':large_desc', $large_desc);
+        $stmt->bindParam(':caracteristics', $caracteristics);
+
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+
     public function getVisibility($id) {
         $query = "SELECT visible FROM products WHERE id = :id";
         $stmt = $this->conn->prepare($query);

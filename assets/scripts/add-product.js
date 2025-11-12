@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Setting Main Image to first galery image
-        if(id === 0) {
-            document.querySelector('.main-image img').src = src
+        if (id === 0) {
+          document.querySelector('.main-image img').src = src
         }
 
         imagePreviewer.append(item)
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       getCaracteristicsFromData();
     })
 
-  function getCaracteristicsFromData () {
+  function getCaracteristicsFromData() {
     caracteristicPreviewer.innerHTML = ''
 
     let content = document.querySelector(
@@ -55,12 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
     ).value
 
     // Extract Data only when the Div is empty
-    if(!content.length == 0) {
-        let data = content.split('|')
-    
-        data.forEach(element => {
-          caracteristicPreviewer.innerHTML += `<span class="item">${element}</span>`
-        })
+    if (!content.length == 0) {
+      let data = content.split('|')
+
+      data.forEach(element => {
+        caracteristicPreviewer.innerHTML += `<span class="item">${element}</span>`
+      })
     }
   }
 
@@ -105,4 +105,24 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
   // Large Description End
+
+  // Edit product images loading Start
+  if (productImages && productImages.length > 0) {
+    loadImagesFromUrls(productImages);
+  }
+
+  async function loadImagesFromUrls(urls) {
+    const dataTransfer = new DataTransfer();
+
+    for (const url of urls) {
+      const response = await fetch(url);
+      const blob = await response.blob();
+      const filename = url.split('/').pop();
+      const file = new File([blob], filename, { type: blob.type });
+      dataTransfer.items.add(file);
+    }
+
+    imageUploader.files = dataTransfer.files;
+  }
+  // Edit product images loading End
 })

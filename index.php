@@ -33,7 +33,8 @@ $routes = [
     '/' . APP_name . '/mailcheck' => 'check-email',
     '/' . APP_name . '/admin' => 'admin',
     '/' . APP_name . '/dashboard' => 'dashboard',
-    '/' . APP_name . '/admin-add-product' => 'add-product',
+    '/' . APP_name . '/add-product' => 'add-product',
+    '/' . APP_name . '/edit-product' => 'edit-product',
 ];
 
 if (array_key_exists($request, $routes)) {

@@ -15,6 +15,7 @@ foreach ($productsList as $key => $product) {
     $price = $product["price"];
     $id = $product["id"];
     $link = APP_URL . "product?target=$id";
+    $editLink = APP_URL . "edit-product?target=$id";
     $productImage = ""; // Image par défaut
     $hidden = $productModel->getVisibility($id) == 0 ? "hidden" : "";
 
@@ -47,9 +48,9 @@ foreach ($productsList as $key => $product) {
             </div>
 
             <div class='cta'>
-                <a href='$link' class='cta-btn'>Visiter</a>
+                <a target='_blank' href='$link' class='cta-btn'>Visiter</a>
                 <div class='cta-btn mask'>Masquer</div>
-                <a href='' class='cta-btn edit'>Modifier</a>
+                <a target='_blank' href='$editLink' class='cta-btn edit'>Modifier</a>
                 <a href='' class='cta-btn remove'>Supprimer</a>
             </div>
         </div>
