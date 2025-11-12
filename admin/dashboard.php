@@ -51,7 +51,7 @@ foreach ($productsList as $key => $product) {
                 <a target='_blank' href='$link' class='cta-btn rail'>Visiter</a>
                 <div class='cta-btn rail mask'>Masquer</div>
                 <a target='_blank' href='$editLink' class='cta-btn rail edit'>Modifier</a>
-                <a href='' class='cta-btn rail remove'>Supprimer</a>
+                <div href='' class='cta-btn rail remove'>Supprimer</div>
             </div>
         </div>
     ";

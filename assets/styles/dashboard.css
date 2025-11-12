@@ -99,6 +99,8 @@
     transition: .25s;
 }
 .sidebar .links .item:hover,
+.sidebar .links .item.active,
+.sidebar.reduced .links .item.active,
 .sidebar.reduced .links .item:hover {
     background-color: var(--bg-color);
     color: var(--main-color);

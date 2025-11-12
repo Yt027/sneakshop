@@ -81,6 +81,16 @@ class Products {
         return false;
     }
 
+    public function deleteProduct($id) {
+        $query = "DELETE FROM products WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $id);
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+
     public function getVisibility($id) {
         $query = "SELECT visible FROM products WHERE id = :id";
         $stmt = $this->conn->prepare($query);

@@ -55,6 +55,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 product.classList.toggle("hidden", state == 0)
             })
         })
+
+        // Removing product
+        product.querySelector(".cta .cta-btn.remove").addEventListener("click", () => {
+            if(confirm("Êtes-vous sûr de vouloir supprimer ce produit ? Cette action est irréversible !") == false) {
+                return;
+            }
+            let state;
+            deleteProduct(id)
+            .then(data => {
+                state = data["state"];
+                if(state) {
+                    product.remove();
+                }
+            })
+        })
     })
 
     async function toggleVisibility(id) {
@@ -63,6 +78,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         return fetch("./admin/show-hide-product.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(request).toString()
+        })
+            .then(res => res.json())
+            .then(data => {
+                return data;
+            })
+            .catch(err => { return err })
+    }
+
+    async function deleteProduct(id) {
+        let request = {
+            "id": id
+        }
+
+        return fetch("./admin/remove-product.php", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(request).toString()
