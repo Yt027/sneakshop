@@ -49,8 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // Manage product's visibility
         product.querySelector(".cta .cta-btn.mask").addEventListener("click", () => {
             let state;
+            ajaxStart(product);
             toggleVisibility(id)
             .then(data => {
+                ajaxEnd(product);
                 state = data["state"];
                 product.classList.toggle("hidden", state == 0)
             })
@@ -62,8 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
             let state;
+            ajaxStart(product);
             deleteProduct(id)
             .then(data => {
+                ajaxEnd(product);
                 state = data["state"];
                 if(state) {
                     product.remove();

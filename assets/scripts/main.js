@@ -74,3 +74,13 @@ async function addToCart(origin, id, qty) {
     .catch(err => {return err})
 }
 // Add to cart API requests End
+
+// Ajax loading Start
+function ajaxStart(element) {
+    element.classList.add("ajax");
+}
+
+function ajaxEnd(element) {
+    element.classList.remove("ajax");
+}
+// Ajax loading End

@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const cartBtn = card.querySelector(".ban .add-to-cart");
         cartBtn.addEventListener("click", () => {
+            ajaxStart(cartBtn)
             addToCart("shop", id, 1)
                 .then(data => {
+                    ajaxEnd(cartBtn)
                     if (data.inCart) {
                         card.classList.add("carted");
                         cartBtn.setAttribute("title", "Supprimer du panier");

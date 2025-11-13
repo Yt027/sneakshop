@@ -35,20 +35,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Removing from cart
     cartItem.querySelector(".remove-from-cart").addEventListener("click", () => {
       // Sending zero to add-to-cart API
+      ajaxStart(cartItem);
       addToCart("cart", id, 0)
         .then(data => {
-            console.log(data);              
+            ajaxEnd(cartItem);
+            // Removing product
+            if(data["outCart"] == id){
+              cartItem.remove()
+            };
         })
-      // Removing product
-      cartItem.remove();
     })
 
     // Add non null quantity to cart
-    function changeQty(id, qty) {
+    async function changeQty(id, qty) {
       // Sending new value to add-to-cart API
         addToCart("cart", id, qty)
           .then(data => {
-              console.log(data);              
+              return true;
           })
     }
   })

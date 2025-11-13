@@ -71,6 +71,27 @@ a {
     margin: 0 auto;
 }
 
+.ajax {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+.ajax::after {
+    content: "";
+    z-index: 200;
+    pointer-events: all;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    background-image: url(../images/ajax-loading.gif);
+    background-size: min(100%, 70px);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /* General Stuff End */
 
 /* Header Start */

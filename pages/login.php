@@ -36,7 +36,7 @@ require_once __DIR__ . "/../controls/login.php";
                 <h1>Restez en forme</h1>
                 <label>
                     <span class="text">Adresse mail</span>
-                    <input type="email" name="email" id="" placeholder="Email: " required aria-required="true">
+                    <input type="email" name="email" id="" placeholder="Email: " required aria-required="true" autocomplete="email">
                 </label>
 
                 <label class="password">
