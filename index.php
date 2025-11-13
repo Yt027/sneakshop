@@ -33,6 +33,7 @@ $routes = [
     '/' . APP_name . '/mailcheck' => 'check-email',
     '/' . APP_name . '/admin' => 'admin',
     '/' . APP_name . '/dashboard' => 'dashboard',
+    '/' . APP_name . '/account' => 'account',
     '/' . APP_name . '/add-product' => 'add-product',
     '/' . APP_name . '/edit-product' => 'edit-product',
 ];

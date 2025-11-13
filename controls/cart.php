@@ -65,28 +65,3 @@ foreach ($productList as $id => $qty) {
         ";
     }
 }
-
-
-
-"
-    <div class='item'>
-        <div class='image'>
-            <img src='<?=APP_URL?>assets/images/Shoes-White.H03.2k.png' alt=''>
-        </div>
-
-        <div class='content'>
-            <h2 class='name'>Nike Air Force 1 '07</h2>
-            <p class='category'>Male sneakers</p>
-            <p class='price'>12.000F CFA
-            
-            <div class='cart-counter'>
-                <input type='number' name='' id='' min='1' class='number' value='1'>
-
-                <div class='btns'>
-                    <div class='btn plus'><i class='bx bxs-up-arrow'></i></div>
-                    <div class='btn minus'><i class='bx bxs-down-arrow'></i></div>
-                </div>
-            </div>
-        </div>
-    </div>
-";

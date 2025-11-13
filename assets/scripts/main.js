@@ -67,7 +67,8 @@ async function addToCart(origin, id, qty) {
         body: new URLSearchParams(request).toString()
     })
     .then(res => res.json())
-    .then(data => {            
+    .then(data => {   
+        document.querySelector("header.header").classList.toggle("cart-filled", !data["cartEmpty"])         
         return data;
     })
     .catch(err => {return err})

@@ -19,6 +19,7 @@ foreach ($products as $key => $product) {
     $name = $product["name"];
     $price = $product["price"];
     $description = $product["description"];
+    $short_desc = substr($description, 0, 50);
     $id = $product["id"];
     $link = APP_URL . "product?target=$id";
     $isCarted = isset($cart[$id]) ? "carted" : "";
@@ -48,7 +49,7 @@ foreach ($products as $key => $product) {
                     <h3 class='name'>$name</h3>
                     <span class='price'>$price FCFA</span>
                 </div>
-                <p class='desc'>$description</p>
+                <p class='desc'>$short_desc</p>
 
                 <a target='_blank' class='cta-btn small rail' href='$link'>Visiter</a>
             </div>

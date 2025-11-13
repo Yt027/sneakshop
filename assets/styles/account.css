@@ -144,104 +144,162 @@
     width: inherit;
     height: inherit;
     overflow-y: scroll;
-    padding: 20px;
+    padding: 40px 20px;
+}
+
+.section-title {
+    margin-bottom: 60px;
 }
 /* Page General Styles End */
 
-/* Products section */
-.page .products {
+/* Cart section Start */
+.cart .wrapper {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-    align-items: start;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
-.page .products .product-container .product-card {
-    flex: 0 0 auto;
-    max-width: unset;
+.cart .wrapper .item {
+    box-shadow: 0 0px 5px -2px rgba(0, 0, 0, 0.25);
     display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.page .products .product-container .product-card .info {
-    flex: 0 0 200px;
+    border-radius: 16px;
     overflow: hidden;
-    position: relative;
 }
 
-.page .products .product-container .product-card .info .image {
+.cart .wrapper .item .image {
+    width: 250px;
     height: 200px;
 }
-
-.page .products .product-container .product-card .content {
-    padding: 5px;
+.cart .wrapper .item .image img {
     width: 100%;
-    max-width: calc(100% - 20px);
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(5px);
-    border-radius: 6px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
-.page .products .product-container .product-card .info .mask {
-    display: none;
+.cart .wrapper .item .content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.page .products .product-container .product-card.hidden .info .mask {
+
+.cart .wrapper .item .content .name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: .9;
+    font-style: italic;
+    color: var(--color);
+}
+
+.cart .wrapper .item .content .category {
+    font-size: .95rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.cart .wrapper .item .content .price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: -2.5px;
+    margin-bottom: 10px;
+}
+
+.cart .wrapper .item .content .cta {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart .wrapper .item .content .cta .remove-from-cart {
+    background-color: transparent;
+    color: var(--main-color);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: .75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .2s;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.cart .wrapper .item .content .cta .remove-from-cart::before {
+    content: "";
+    z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 100%;
+    background-color: var(--main-color);
+    border-radius: inherit;
+    transition: inherit;
+}
+.cart .wrapper .item .content .cta .remove-from-cart:hover {
+    color: var(--bg-color);
+}
+.cart .wrapper .item .content .cta .remove-from-cart:hover::before {
+    width: 100%;
+}
+/* Cart section End */
+
+
+/* Logout section Start */
+.logout {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    background-color: #ffffffbd;
-    color: var(--primary-color);
 }
 
-
-.page .products .product-container .product-card .cta {
-    padding: 10px;
+.logout .confirm {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 15px;
     flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 10px -3px rgba(0, 0, 0, 0.25);
 }
 
-.page .products .product-container .product-card .cta .cta-btn {
-    padding: 5px 15px;
+.logout .confirm .alert {
+    text-align: center;
+    color: var(--color);
+    font-size: 1.52rem;
+    font-style: italic;
+}
+
+.logout .confirm .cta {
+    display: flex;
+    gap: 10px;
+}
+
+.logout .confirm .cta .mail {
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px -3px rgba(0, 0, 0, 0.8);
+    max-width: 140px;
+    overflow: hidden;
+    position: relative;
+    /* border: 1px solid var(--color); */
     font-size: 1rem;
+    font-weight: 400;
+    user-select: none;
 }
-.page .products .product-container .product-card .cta .cta-btn {
-    --v-color: var(--main-color);
-}
-/* CTA Button variations */
-/* Mask */
-.page .products .product-container .product-card .cta .cta-btn.mask {
-    --v-color: rgb(7, 122, 103);
-}
-/* Edit */
-.page .products .product-container .product-card .cta .cta-btn.edit {
-    --v-color: rgb(19, 145, 218);
-}
-/* Remove */
-.page .products .product-container .product-card .cta .cta-btn.remove {
-    --v-color: rgb(161, 0, 0);
+.logout .confirm .cta .mail::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background-image: linear-gradient(to left, var(--bg-color) 15%, transparent);
 }
 
-.page .products .product-container .product-card .cta .cta-btn {
-    background-color: var(--v-color);
-    border: 1px solid var(--v-color);
+.logout .confirm .cta .cta-btn {
+    border-radius: 6px;
 }
-.page .products .product-container .product-card .cta .cta-btn:hover {
-    color: var(--v-color);
-    border: 1px solid var(--v-color);
-    background-color: inherit;
-}
+/* Logout section End */

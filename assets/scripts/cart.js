@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(data);              
         })
       // Removing product
-      cartItem.style.display = "none";
+      cartItem.remove();
     })
 
     // Add non null quantity to cart

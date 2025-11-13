@@ -76,7 +76,7 @@ require_once __DIR__ . "/../admin/dashboard.php";
             <section class="products">
                 <h2 class="section-title">Produits</h2>
                 <p class="count">Vous avez <?= count($productsList) ?> article.s dans la boutique</p>
-                <a target="_blank" href="<?= APP_URL ?>add-product" class="cta-btn rail small">Ajouter des articles</a>
+                <a target="_blank" href="<?= APP_URL ?>add-product" class="cta-btn small">Ajouter des articles</a>
 
                 <div class="product-container">
                     <?=$data["products"] # Display products?>

@@ -50,6 +50,9 @@ if ($origin === "shop") {
     $response = ["error" => "Unknown action"];
 }
 
+// Notice wether cart is empty or not
+$response["cartEmpty"] = empty($cart) ? true : false;
+
 // Sauvegarde
 if ($isUser) {
     $cartModel->setCart($cart);
